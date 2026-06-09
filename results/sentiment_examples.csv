@@ -1,0 +1,16 @@
+text,label
+"The model is fast and accurate, I really like it.",positive
+This update solved my problem and saved time.,positive
+"The interface feels clean, stable, and useful.",positive
+The battery life is excellent for edge deployment.,positive
+I am happy with the clear documentation.,positive
+The agent failed twice and produced wrong answers.,negative
+"The tool is slow, confusing, and unreliable.",negative
+The results are noisy and the setup is painful.,negative
+The detector missed important objects in the image.,negative
+The latency is unacceptable for real-time use.,negative
+The paper is interesting but the evidence is limited.,neutral
+The dataset contains 1000 samples and 12 features.,neutral
+The method uses logistic regression as a baseline.,neutral
+The report describes training and evaluation steps.,neutral
+The system runs on CPU and stores logs locally.,neutral

@@ -1,0 +1,46 @@
+prompt_template,text,true_label,predicted_label
+short_label_prompt,"The model is fast and accurate, I really like it.",positive,positive
+short_label_prompt,This update solved my problem and saved time.,positive,positive
+short_label_prompt,"The interface feels clean, stable, and useful.",positive,positive
+short_label_prompt,The battery life is excellent for edge deployment.,positive,positive
+short_label_prompt,I am happy with the clear documentation.,positive,positive
+short_label_prompt,The agent failed twice and produced wrong answers.,negative,negative
+short_label_prompt,"The tool is slow, confusing, and unreliable.",negative,negative
+short_label_prompt,The results are noisy and the setup is painful.,negative,negative
+short_label_prompt,The detector missed important objects in the image.,negative,negative
+short_label_prompt,The latency is unacceptable for real-time use.,negative,negative
+short_label_prompt,The paper is interesting but the evidence is limited.,neutral,neutral
+short_label_prompt,The dataset contains 1000 samples and 12 features.,neutral,neutral
+short_label_prompt,The method uses logistic regression as a baseline.,neutral,neutral
+short_label_prompt,The report describes training and evaluation steps.,neutral,neutral
+short_label_prompt,The system runs on CPU and stores logs locally.,neutral,neutral
+clinical_cautious_prompt,"The model is fast and accurate, I really like it.",positive,positive
+clinical_cautious_prompt,This update solved my problem and saved time.,positive,neutral
+clinical_cautious_prompt,"The interface feels clean, stable, and useful.",positive,positive
+clinical_cautious_prompt,The battery life is excellent for edge deployment.,positive,positive
+clinical_cautious_prompt,I am happy with the clear documentation.,positive,positive
+clinical_cautious_prompt,The agent failed twice and produced wrong answers.,negative,negative
+clinical_cautious_prompt,"The tool is slow, confusing, and unreliable.",negative,negative
+clinical_cautious_prompt,The results are noisy and the setup is painful.,negative,negative
+clinical_cautious_prompt,The detector missed important objects in the image.,negative,negative
+clinical_cautious_prompt,The latency is unacceptable for real-time use.,negative,negative
+clinical_cautious_prompt,The paper is interesting but the evidence is limited.,neutral,neutral
+clinical_cautious_prompt,The dataset contains 1000 samples and 12 features.,neutral,neutral
+clinical_cautious_prompt,The method uses logistic regression as a baseline.,neutral,neutral
+clinical_cautious_prompt,The report describes training and evaluation steps.,neutral,neutral
+clinical_cautious_prompt,The system runs on CPU and stores logs locally.,neutral,neutral
+balanced_reasoning_prompt,"The model is fast and accurate, I really like it.",positive,positive
+balanced_reasoning_prompt,This update solved my problem and saved time.,positive,positive
+balanced_reasoning_prompt,"The interface feels clean, stable, and useful.",positive,positive
+balanced_reasoning_prompt,The battery life is excellent for edge deployment.,positive,positive
+balanced_reasoning_prompt,I am happy with the clear documentation.,positive,positive
+balanced_reasoning_prompt,The agent failed twice and produced wrong answers.,negative,negative
+balanced_reasoning_prompt,"The tool is slow, confusing, and unreliable.",negative,negative
+balanced_reasoning_prompt,The results are noisy and the setup is painful.,negative,negative
+balanced_reasoning_prompt,The detector missed important objects in the image.,negative,negative
+balanced_reasoning_prompt,The latency is unacceptable for real-time use.,negative,negative
+balanced_reasoning_prompt,The paper is interesting but the evidence is limited.,neutral,negative
+balanced_reasoning_prompt,The dataset contains 1000 samples and 12 features.,neutral,neutral
+balanced_reasoning_prompt,The method uses logistic regression as a baseline.,neutral,neutral
+balanced_reasoning_prompt,The report describes training and evaluation steps.,neutral,neutral
+balanced_reasoning_prompt,The system runs on CPU and stores logs locally.,neutral,neutral

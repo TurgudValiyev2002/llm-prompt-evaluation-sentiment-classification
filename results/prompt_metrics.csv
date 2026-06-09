@@ -1,0 +1,4 @@
+prompt_template,accuracy
+short_label_prompt,1.0
+clinical_cautious_prompt,0.9333
+balanced_reasoning_prompt,0.9333
