@@ -1,46 +1,91 @@
-prompt_template,text,true_label,predicted_label
-short_label_prompt,"The model is fast and accurate, I really like it.",positive,positive
-short_label_prompt,This update solved my problem and saved time.,positive,positive
-short_label_prompt,"The interface feels clean, stable, and useful.",positive,positive
-short_label_prompt,The battery life is excellent for edge deployment.,positive,positive
-short_label_prompt,I am happy with the clear documentation.,positive,positive
-short_label_prompt,The agent failed twice and produced wrong answers.,negative,negative
-short_label_prompt,"The tool is slow, confusing, and unreliable.",negative,negative
-short_label_prompt,The results are noisy and the setup is painful.,negative,negative
-short_label_prompt,The detector missed important objects in the image.,negative,negative
-short_label_prompt,The latency is unacceptable for real-time use.,negative,negative
-short_label_prompt,The paper is interesting but the evidence is limited.,neutral,neutral
-short_label_prompt,The dataset contains 1000 samples and 12 features.,neutral,neutral
-short_label_prompt,The method uses logistic regression as a baseline.,neutral,neutral
-short_label_prompt,The report describes training and evaluation steps.,neutral,neutral
-short_label_prompt,The system runs on CPU and stores logs locally.,neutral,neutral
-clinical_cautious_prompt,"The model is fast and accurate, I really like it.",positive,positive
-clinical_cautious_prompt,This update solved my problem and saved time.,positive,neutral
-clinical_cautious_prompt,"The interface feels clean, stable, and useful.",positive,positive
-clinical_cautious_prompt,The battery life is excellent for edge deployment.,positive,positive
-clinical_cautious_prompt,I am happy with the clear documentation.,positive,positive
-clinical_cautious_prompt,The agent failed twice and produced wrong answers.,negative,negative
-clinical_cautious_prompt,"The tool is slow, confusing, and unreliable.",negative,negative
-clinical_cautious_prompt,The results are noisy and the setup is painful.,negative,negative
-clinical_cautious_prompt,The detector missed important objects in the image.,negative,negative
-clinical_cautious_prompt,The latency is unacceptable for real-time use.,negative,negative
-clinical_cautious_prompt,The paper is interesting but the evidence is limited.,neutral,neutral
-clinical_cautious_prompt,The dataset contains 1000 samples and 12 features.,neutral,neutral
-clinical_cautious_prompt,The method uses logistic regression as a baseline.,neutral,neutral
-clinical_cautious_prompt,The report describes training and evaluation steps.,neutral,neutral
-clinical_cautious_prompt,The system runs on CPU and stores logs locally.,neutral,neutral
-balanced_reasoning_prompt,"The model is fast and accurate, I really like it.",positive,positive
-balanced_reasoning_prompt,This update solved my problem and saved time.,positive,positive
-balanced_reasoning_prompt,"The interface feels clean, stable, and useful.",positive,positive
-balanced_reasoning_prompt,The battery life is excellent for edge deployment.,positive,positive
-balanced_reasoning_prompt,I am happy with the clear documentation.,positive,positive
-balanced_reasoning_prompt,The agent failed twice and produced wrong answers.,negative,negative
-balanced_reasoning_prompt,"The tool is slow, confusing, and unreliable.",negative,negative
-balanced_reasoning_prompt,The results are noisy and the setup is painful.,negative,negative
-balanced_reasoning_prompt,The detector missed important objects in the image.,negative,negative
-balanced_reasoning_prompt,The latency is unacceptable for real-time use.,negative,negative
-balanced_reasoning_prompt,The paper is interesting but the evidence is limited.,neutral,negative
-balanced_reasoning_prompt,The dataset contains 1000 samples and 12 features.,neutral,neutral
-balanced_reasoning_prompt,The method uses logistic regression as a baseline.,neutral,neutral
-balanced_reasoning_prompt,The report describes training and evaluation steps.,neutral,neutral
-balanced_reasoning_prompt,The system runs on CPU and stores logs locally.,neutral,neutral
+prompt_template,text,slice,true_label,predicted_label,correct,rationale
+short_label_prompt,"The model is fast and accurate, I really like it.",plain_positive,positive,positive,True,"more positive evidence; positive=['accurate', 'fast', 'like']; negative=[]"
+short_label_prompt,This update solved my problem and saved time.,plain_positive,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,"The interface feels clean, stable, and useful.",plain_positive,positive,positive,True,"more positive evidence; positive=['clean', 'stable', 'useful']; negative=[]"
+short_label_prompt,The battery life is excellent for edge deployment.,plain_positive,positive,positive,True,more positive evidence; positive=['excellent']; negative=[]
+short_label_prompt,I am happy with the clear documentation.,plain_positive,positive,positive,True,"more positive evidence; positive=['clear', 'happy']; negative=[]"
+short_label_prompt,The new dashboard is reliable and easy to understand.,plain_positive,positive,positive,True,"more positive evidence; positive=['easy', 'reliable']; negative=[]"
+short_label_prompt,The agent gave correct answers after the prompt was shortened.,llm_context,positive,positive,True,more positive evidence; positive=['correct']; negative=[]
+short_label_prompt,The detector improves recall without increasing latency.,ai_system,positive,positive,True,more positive evidence; positive=['improves']; negative=[]
+short_label_prompt,The deployment is simple and the logs are helpful.,engineering,positive,positive,True,more positive evidence; positive=['helpful']; negative=[]
+short_label_prompt,"The baseline is modest, but the improvement is meaningful.",mixed_clause,positive,positive,True,more positive evidence; positive=['meaningful']; negative=[]
+short_label_prompt,The agent failed twice and produced wrong answers.,plain_negative,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,"The tool is slow, confusing, and unreliable.",plain_negative,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,The results are noisy and the setup is painful.,plain_negative,negative,negative,True,"more negative evidence; positive=[]; negative=['noisy', 'painful']"
+short_label_prompt,The detector missed important objects in the image.,ai_system,negative,negative,True,more negative evidence; positive=[]; negative=['missed']
+short_label_prompt,The latency is unacceptable for real-time use.,edge_context,negative,negative,True,more negative evidence; positive=[]; negative=['unacceptable']
+short_label_prompt,"The output looks polished, but the factual errors are serious.",mixed_clause,negative,negative,True,more negative evidence; positive=[]; negative=['errors']
+short_label_prompt,The model is accurate on easy cases but unsafe on hard cases.,mixed_clause,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+short_label_prompt,The prompt sounds confident while giving unsupported claims.,llm_context,negative,negative,True,more negative evidence; positive=[]; negative=['unsupported']
+short_label_prompt,The benchmark score dropped after quantization.,ai_system,negative,negative,True,more negative evidence; positive=[]; negative=['dropped']
+short_label_prompt,The system crashes when the input is longer than expected.,engineering,negative,negative,True,more negative evidence; positive=[]; negative=['crashes']
+short_label_prompt,The paper is interesting but the evidence is limited.,academic,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The dataset contains 1000 samples and 12 features.,metadata,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The method uses logistic regression as a baseline.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The report describes training and evaluation steps.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The system runs on CPU and stores logs locally.,engineering,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The experiment compares three prompt templates.,llm_context,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The model was evaluated on validation and test splits.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The paper reports accuracy, F1 score, and confusion matrices.",academic,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The pipeline stores predictions in a CSV file.,engineering,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The result is not bad, but it is not clearly good either.",ambiguous,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The model is fast and accurate, I really like it.",plain_positive,positive,neutral,False,neutral tie/bias; positive=['accurate']; negative=[]
+clinical_cautious_prompt,This update solved my problem and saved time.,plain_positive,positive,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The interface feels clean, stable, and useful.",plain_positive,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,The battery life is excellent for edge deployment.,plain_positive,positive,neutral,False,neutral tie/bias; positive=['excellent']; negative=[]
+clinical_cautious_prompt,I am happy with the clear documentation.,plain_positive,positive,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The new dashboard is reliable and easy to understand.,plain_positive,positive,neutral,False,neutral tie/bias; positive=['reliable']; negative=[]
+clinical_cautious_prompt,The agent gave correct answers after the prompt was shortened.,llm_context,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The detector improves recall without increasing latency.,ai_system,positive,neutral,False,neutral tie/bias; positive=['improves']; negative=[]
+clinical_cautious_prompt,The deployment is simple and the logs are helpful.,engineering,positive,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The baseline is modest, but the improvement is meaningful.",mixed_clause,positive,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The agent failed twice and produced wrong answers.,plain_negative,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,"The tool is slow, confusing, and unreliable.",plain_negative,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,The results are noisy and the setup is painful.,plain_negative,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The detector missed important objects in the image.,ai_system,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The latency is unacceptable for real-time use.,edge_context,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unacceptable']
+clinical_cautious_prompt,"The output looks polished, but the factual errors are serious.",mixed_clause,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The model is accurate on easy cases but unsafe on hard cases.,mixed_clause,negative,neutral,False,neutral tie/bias; positive=['accurate']; negative=['unsafe']
+clinical_cautious_prompt,The prompt sounds confident while giving unsupported claims.,llm_context,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unsupported']
+clinical_cautious_prompt,The benchmark score dropped after quantization.,ai_system,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The system crashes when the input is longer than expected.,engineering,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashes']
+clinical_cautious_prompt,The paper is interesting but the evidence is limited.,academic,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The dataset contains 1000 samples and 12 features.,metadata,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The method uses logistic regression as a baseline.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The report describes training and evaluation steps.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The system runs on CPU and stores logs locally.,engineering,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The experiment compares three prompt templates.,llm_context,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The model was evaluated on validation and test splits.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The paper reports accuracy, F1 score, and confusion matrices.",academic,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The pipeline stores predictions in a CSV file.,engineering,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The result is not bad, but it is not clearly good either.",ambiguous,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,"The model is fast and accurate, I really like it.",plain_positive,positive,positive,True,"more positive evidence; positive=['accurate', 'fast', 'like']; negative=[]"
+balanced_reasoning_prompt,This update solved my problem and saved time.,plain_positive,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,"The interface feels clean, stable, and useful.",plain_positive,positive,positive,True,"more positive evidence; positive=['clean', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,The battery life is excellent for edge deployment.,plain_positive,positive,positive,True,more positive evidence; positive=['excellent']; negative=[]
+balanced_reasoning_prompt,I am happy with the clear documentation.,plain_positive,positive,positive,True,"more positive evidence; positive=['clear', 'happy']; negative=[]"
+balanced_reasoning_prompt,The new dashboard is reliable and easy to understand.,plain_positive,positive,positive,True,"more positive evidence; positive=['easy', 'reliable']; negative=[]"
+balanced_reasoning_prompt,The agent gave correct answers after the prompt was shortened.,llm_context,positive,positive,True,more positive evidence; positive=['correct']; negative=[]
+balanced_reasoning_prompt,The detector improves recall without increasing latency.,ai_system,positive,positive,True,more positive evidence; positive=['improves']; negative=[]
+balanced_reasoning_prompt,The deployment is simple and the logs are helpful.,engineering,positive,positive,True,more positive evidence; positive=['helpful']; negative=[]
+balanced_reasoning_prompt,"The baseline is modest, but the improvement is meaningful.",mixed_clause,positive,positive,True,more positive evidence; positive=['meaningful']; negative=[]
+balanced_reasoning_prompt,The agent failed twice and produced wrong answers.,plain_negative,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,"The tool is slow, confusing, and unreliable.",plain_negative,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,The results are noisy and the setup is painful.,plain_negative,negative,negative,True,"more negative evidence; positive=[]; negative=['noisy', 'painful']"
+balanced_reasoning_prompt,The detector missed important objects in the image.,ai_system,negative,negative,True,more negative evidence; positive=[]; negative=['missed']
+balanced_reasoning_prompt,The latency is unacceptable for real-time use.,edge_context,negative,negative,True,more negative evidence; positive=[]; negative=['unacceptable']
+balanced_reasoning_prompt,"The output looks polished, but the factual errors are serious.",mixed_clause,negative,negative,True,"more negative evidence; positive=['polished']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,The model is accurate on easy cases but unsafe on hard cases.,mixed_clause,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+balanced_reasoning_prompt,The prompt sounds confident while giving unsupported claims.,llm_context,negative,negative,True,more negative evidence; positive=[]; negative=['unsupported']
+balanced_reasoning_prompt,The benchmark score dropped after quantization.,ai_system,negative,negative,True,more negative evidence; positive=[]; negative=['dropped']
+balanced_reasoning_prompt,The system crashes when the input is longer than expected.,engineering,negative,negative,True,more negative evidence; positive=[]; negative=['crashes']
+balanced_reasoning_prompt,The paper is interesting but the evidence is limited.,academic,neutral,negative,False,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,The dataset contains 1000 samples and 12 features.,metadata,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The method uses logistic regression as a baseline.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The report describes training and evaluation steps.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The system runs on CPU and stores logs locally.,engineering,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The experiment compares three prompt templates.,llm_context,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The model was evaluated on validation and test splits.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,"The paper reports accuracy, F1 score, and confusion matrices.",academic,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The pipeline stores predictions in a CSV file.,engineering,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,"The result is not bad, but it is not clearly good either.",ambiguous,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]

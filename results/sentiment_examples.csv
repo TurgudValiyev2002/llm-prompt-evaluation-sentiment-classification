@@ -1,16 +1,31 @@
-text,label
-"The model is fast and accurate, I really like it.",positive
-This update solved my problem and saved time.,positive
-"The interface feels clean, stable, and useful.",positive
-The battery life is excellent for edge deployment.,positive
-I am happy with the clear documentation.,positive
-The agent failed twice and produced wrong answers.,negative
-"The tool is slow, confusing, and unreliable.",negative
-The results are noisy and the setup is painful.,negative
-The detector missed important objects in the image.,negative
-The latency is unacceptable for real-time use.,negative
-The paper is interesting but the evidence is limited.,neutral
-The dataset contains 1000 samples and 12 features.,neutral
-The method uses logistic regression as a baseline.,neutral
-The report describes training and evaluation steps.,neutral
-The system runs on CPU and stores logs locally.,neutral
+text,label,slice
+"The model is fast and accurate, I really like it.",positive,plain_positive
+This update solved my problem and saved time.,positive,plain_positive
+"The interface feels clean, stable, and useful.",positive,plain_positive
+The battery life is excellent for edge deployment.,positive,plain_positive
+I am happy with the clear documentation.,positive,plain_positive
+The new dashboard is reliable and easy to understand.,positive,plain_positive
+The agent gave correct answers after the prompt was shortened.,positive,llm_context
+The detector improves recall without increasing latency.,positive,ai_system
+The deployment is simple and the logs are helpful.,positive,engineering
+"The baseline is modest, but the improvement is meaningful.",positive,mixed_clause
+The agent failed twice and produced wrong answers.,negative,plain_negative
+"The tool is slow, confusing, and unreliable.",negative,plain_negative
+The results are noisy and the setup is painful.,negative,plain_negative
+The detector missed important objects in the image.,negative,ai_system
+The latency is unacceptable for real-time use.,negative,edge_context
+"The output looks polished, but the factual errors are serious.",negative,mixed_clause
+The model is accurate on easy cases but unsafe on hard cases.,negative,mixed_clause
+The prompt sounds confident while giving unsupported claims.,negative,llm_context
+The benchmark score dropped after quantization.,negative,ai_system
+The system crashes when the input is longer than expected.,negative,engineering
+The paper is interesting but the evidence is limited.,neutral,academic
+The dataset contains 1000 samples and 12 features.,neutral,metadata
+The method uses logistic regression as a baseline.,neutral,method_description
+The report describes training and evaluation steps.,neutral,method_description
+The system runs on CPU and stores logs locally.,neutral,engineering
+The experiment compares three prompt templates.,neutral,llm_context
+The model was evaluated on validation and test splits.,neutral,method_description
+"The paper reports accuracy, F1 score, and confusion matrices.",neutral,academic
+The pipeline stores predictions in a CSV file.,neutral,engineering
+"The result is not bad, but it is not clearly good either.",neutral,ambiguous

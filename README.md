@@ -2,53 +2,93 @@
 
 ## Motivation
 
-Prompt design changes model behavior, but prompt quality should not be judged by intuition alone. In this project, we built a small evaluation workflow for sentiment classification so that different prompt styles can be compared with the same examples and the same metrics.
+Prompt design is often discussed by intuition: one prompt "feels" more careful, another "feels" more direct, and another asks for reasoning. That is not enough for research work. Even for a small task, prompts should be compared on the same labeled examples, with the same metrics, and with visible error analysis.
+
+This project builds a small offline lab for that idea. It does not call a real LLM API. Instead, each prompt style is represented by a transparent rule-based policy so the full evaluation workflow can run locally and be inspected line by line.
 
 ## Project Goal
 
-We compared three prompt-style classification policies:
+The goal is to compare three prompt styles for sentiment classification:
 
-1. A short label prompt.
-2. A cautious prompt.
-3. A balanced reasoning prompt.
+1. `short_label_prompt`: direct classification with a simple label-only instruction.
+2. `clinical_cautious_prompt`: conservative classification that prefers neutral when evidence is weak.
+3. `balanced_reasoning_prompt`: a policy that weighs positive and negative evidence before deciding.
 
-The goal was to practice prompt evaluation: define labeled examples, run each prompt policy, measure accuracy, and inspect mistakes.
+The scientific question is not "which prompt is universally best?" The question is narrower: how do different prompt behaviors change accuracy, class balance, and errors on the same sentiment examples?
 
 ## Dataset
 
-We used a small controlled set of 15 sentences: 5 positive, 5 negative, and 5 neutral. The examples are simple on purpose, because the focus is the evaluation method rather than dataset size.
+The dataset contains 30 short labeled sentences:
+
+- 10 positive examples.
+- 10 negative examples.
+- 10 neutral examples.
+
+The examples include plain sentiment, AI-system comments, engineering comments, academic statements, ambiguous wording, and mixed clauses. The dataset is intentionally small, so the results should be read as a controlled demonstration rather than a general benchmark.
 
 ## Tools
 
-Python, pandas, scikit-learn metrics, and matplotlib.
+- Python
+- pandas
+- scikit-learn metrics
+- matplotlib
 
 ## Method
 
-Each prompt style was represented by a transparent keyword-based classifier. This does not replace a real LLM evaluation, but it makes the behavior inspectable and reproducible without external API access.
+The script stores the dataset, prompt templates, predictions, rationales, aggregate metrics, per-slice metrics, classification reports, confusion matrices, and error analysis files in `results/`.
+
+Each prompt policy uses different positive/negative evidence words and a different neutral-bias setting. This approximates how prompt wording can change model behavior:
+
+- A direct prompt may classify more aggressively.
+- A cautious prompt may overuse neutral.
+- A balanced prompt may be sensitive to mixed positive and negative words.
+
+This is a useful teaching proxy, but it is not a substitute for evaluating a real LLM on a larger public dataset.
 
 ## Hyperparameters
 
-No model was trained. The fixed settings were the three prompt policies and the three output labels: positive, neutral, and negative.
+No model is trained. The fixed experimental settings are:
+
+- `num_examples = 30`
+- labels: `positive`, `neutral`, `negative`
+- prompt policies: 3
+- neutral-bias values:
+  - `short_label_prompt`: 0
+  - `clinical_cautious_prompt`: 1
+  - `balanced_reasoning_prompt`: 0
 
 ## Results
 
-| Prompt Policy | Accuracy |
-|---|---:|
-| short_label_prompt | 1.0000 |
-| clinical_cautious_prompt | 0.9333 |
-| balanced_reasoning_prompt | 0.9333 |
+| Prompt Policy | Accuracy | Macro F1 | Weighted F1 |
+|---|---:|---:|---:|
+| short_label_prompt | 0.9667 | 0.9666 | 0.9666 |
+| balanced_reasoning_prompt | 0.9333 | 0.9332 | 0.9332 |
+| clinical_cautious_prompt | 0.3667 | 0.2315 | 0.2315 |
 
-The result files include the labeled examples, all predictions, prompt-level metrics, classification reports, confusion matrices, and an accuracy figure.
+![Prompt evaluation scores](results/prompt_accuracy_macro_f1.png)
+
+The best policy on this small dataset is the direct label prompt. The balanced policy is close behind but misclassifies some mixed or limited-evidence sentences. The cautious policy performs badly because it collapses many positive and negative examples into neutral.
+
+Important result files:
+
+- `results/prompt_metrics.csv`
+- `results/prompt_templates.csv`
+- `results/all_prompt_predictions.csv`
+- `results/error_analysis.csv`
+- `results/slice_metrics.csv`
+- `results/*_classification_report.csv`
+- `results/*_confusion_matrix.csv`
+- `results/*_confusion_matrix.png`
 
 ## Interpretation
 
-The short label prompt reached the best accuracy on this small set. This does not prove it is generally better. It means the examples matched the vocabulary of the short prompt very well. The cautious and balanced prompts made fewer direct assumptions, but they also missed some examples.
+The main lesson is that cautious prompting is not automatically better. A conservative instruction can reduce overconfident mistakes, but it can also destroy recall for positive and negative classes if the model becomes too willing to answer neutral.
 
-The important lesson is methodological: prompt evaluation needs more than a few examples. A small set is useful for debugging, but a serious conclusion requires larger and more diverse data.
+The direct prompt wins here because the examples match its evidence vocabulary well. That does not prove it would win on real user data. A stronger conclusion would require more diverse examples, repeated runs, and real LLM outputs.
 
 ## Conclusion
 
-We built a simple but clear prompt-evaluation pipeline. The next step would be to replace the transparent keyword policies with real LLM outputs and test on a public sentiment benchmark.
+This lab demonstrates a clean prompt-evaluation workflow: define a dataset, define prompt policies, run the same examples through each policy, save metrics, inspect errors, and explain the limits of the result. The next research step is to replace the transparent rule policies with outputs from a real LLM and evaluate on a public sentiment benchmark such as SST-2, IMDb, or TweetEval.
 
 ## How To Run
 

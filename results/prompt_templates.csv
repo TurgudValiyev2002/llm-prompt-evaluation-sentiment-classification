@@ -1,0 +1,4 @@
+prompt_template,template_text
+short_label_prompt,"Classify the sentence as positive, neutral, or negative. Return only the label."
+clinical_cautious_prompt,"Classify only when the evidence is strong. If sentiment is mixed or weak, return neutral."
+balanced_reasoning_prompt,Decide the overall sentiment after weighing positive and negative evidence in the sentence.

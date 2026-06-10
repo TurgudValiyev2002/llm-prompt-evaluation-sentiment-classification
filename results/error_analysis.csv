@@ -1,0 +1,23 @@
+prompt_template,text,slice,true_label,predicted_label,correct,rationale
+short_label_prompt,The model is accurate on easy cases but unsafe on hard cases.,mixed_clause,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+clinical_cautious_prompt,"The model is fast and accurate, I really like it.",plain_positive,positive,neutral,False,neutral tie/bias; positive=['accurate']; negative=[]
+clinical_cautious_prompt,This update solved my problem and saved time.,plain_positive,positive,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The interface feels clean, stable, and useful.",plain_positive,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,The battery life is excellent for edge deployment.,plain_positive,positive,neutral,False,neutral tie/bias; positive=['excellent']; negative=[]
+clinical_cautious_prompt,I am happy with the clear documentation.,plain_positive,positive,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The new dashboard is reliable and easy to understand.,plain_positive,positive,neutral,False,neutral tie/bias; positive=['reliable']; negative=[]
+clinical_cautious_prompt,The agent gave correct answers after the prompt was shortened.,llm_context,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The detector improves recall without increasing latency.,ai_system,positive,neutral,False,neutral tie/bias; positive=['improves']; negative=[]
+clinical_cautious_prompt,The deployment is simple and the logs are helpful.,engineering,positive,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The baseline is modest, but the improvement is meaningful.",mixed_clause,positive,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The tool is slow, confusing, and unreliable.",plain_negative,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,The results are noisy and the setup is painful.,plain_negative,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The detector missed important objects in the image.,ai_system,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The latency is unacceptable for real-time use.,edge_context,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unacceptable']
+clinical_cautious_prompt,"The output looks polished, but the factual errors are serious.",mixed_clause,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The model is accurate on easy cases but unsafe on hard cases.,mixed_clause,negative,neutral,False,neutral tie/bias; positive=['accurate']; negative=['unsafe']
+clinical_cautious_prompt,The prompt sounds confident while giving unsupported claims.,llm_context,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unsupported']
+clinical_cautious_prompt,The benchmark score dropped after quantization.,ai_system,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The system crashes when the input is longer than expected.,engineering,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashes']
+balanced_reasoning_prompt,The model is accurate on easy cases but unsafe on hard cases.,mixed_clause,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+balanced_reasoning_prompt,The paper is interesting but the evidence is limited.,academic,neutral,negative,False,more negative evidence; positive=[]; negative=['limited']
