@@ -1,5 +1,10 @@
 # Prompt Evaluation for Sentiment Classification
 
+![Project overview](assets/readme_project_overview.png)
+
+Figure: workflow for comparing prompt policies on the same sentiment examples.
+
+
 ## Motivation
 
 Prompt design is often discussed by intuition: one prompt "feels" more careful, another "feels" more direct, and another asks for reasoning. That is not enough for research work. Even for a small task, prompts should be compared on the same labeled examples, with the same metrics, and with visible error analysis.
