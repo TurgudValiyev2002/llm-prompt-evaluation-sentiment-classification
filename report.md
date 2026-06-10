@@ -1,33 +1,29 @@
-# One-Page Report: Prompt Evaluation for Sentiment Classification
+# Report: Prompt Evaluation for Sentiment Classification
 
 ## Motivation
 
-This lab shows how to evaluate prompt behavior instead of trusting intuition. The research lesson is simple: a prompt is a method, and methods need measurement.
+We evaluated prompt styles for sentiment classification because prompts should be compared with evidence, not only with personal preference.
 
-## Tools
+## Dataset
 
-Python, pandas, scikit-learn metrics, and matplotlib.
-
-## Dataset Or Problem
-
-The dataset is a small offline evaluation set with 15 labeled sentences across positive, neutral, and negative sentiment.
+The evaluation set contains 15 short sentences: 5 positive, 5 negative, and 5 neutral.
 
 ## Method
 
-Three prompt templates are simulated as transparent keyword classifiers: short label, cautious, and balanced reasoning.
+Three prompt styles were simulated as transparent keyword policies: short label, cautious, and balanced reasoning. For each policy, we saved predictions, metrics, reports, and confusion matrices.
 
 ## Hyperparameters
 
-The label set is fixed to three classes. No training or tuning is performed.
+No model training was used. The labels were positive, neutral, and negative.
 
 ## Results
 
-The script saves prompt-level accuracy, prediction tables, classification reports, and an accuracy bar chart in `results/`.
+The short label prompt achieved 1.0000 accuracy. The cautious and balanced prompts both achieved 0.9333 accuracy.
 
 ## Interpretation
 
-The short label template performs best on this tiny set because its keyword coverage matches the examples. That does not prove it is generally better; it shows why prompt evaluation needs larger and more diverse test data.
+The short prompt worked best because its keyword coverage matched this small evaluation set. This is not enough to claim that it is the best prompt in general. The result shows why prompt evaluation must use diverse examples.
 
 ## Conclusion
 
-Prompt engineering should be treated as experimental design: define labels, run comparisons, and inspect errors.
+The project demonstrates a basic evaluation workflow for prompts. A stronger version should use a real LLM and a larger public sentiment dataset.

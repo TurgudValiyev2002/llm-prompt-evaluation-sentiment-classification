@@ -1,42 +1,56 @@
-# LLM Prompt Evaluation for Sentiment Classification
+# Prompt Evaluation for Sentiment Classification
 
-## 1. Motivation
+## Motivation
 
-Prompt quality changes the behavior of an LLM. Dear Turgud, the critical point is that we should not say "this prompt is better" by feeling. We need a small evaluation set, clear labels, and measurable results.
+Prompt design changes model behavior, but prompt quality should not be judged by intuition alone. In this project, we built a small evaluation workflow for sentiment classification so that different prompt styles can be compared with the same examples and the same metrics.
 
-## 2. Project Goal
+## Project Goal
 
-The goal is to compare three prompt-style decision rules for sentiment classification: a short label prompt, a cautious prompt, and a balanced reasoning prompt.
+We compared three prompt-style classification policies:
 
-## 3. Dataset Or Problem Description
+1. A short label prompt.
+2. A cautious prompt.
+3. A balanced reasoning prompt.
 
-This is an offline prompt-evaluation simulation with 15 manually written sentences: 5 positive, 5 negative, and 5 neutral. It is not a substitute for a real LLM benchmark, but it teaches the evaluation logic.
+The goal was to practice prompt evaluation: define labeled examples, run each prompt policy, measure accuracy, and inspect mistakes.
 
-## 4. Tools
+## Dataset
+
+We used a small controlled set of 15 sentences: 5 positive, 5 negative, and 5 neutral. The examples are simple on purpose, because the focus is the evaluation method rather than dataset size.
+
+## Tools
 
 Python, pandas, scikit-learn metrics, and matplotlib.
 
-## 5. Models Or Methods
+## Method
 
-Each prompt template is represented by a transparent keyword policy. This lets us test prompt behavior without internet access or paid API calls.
+Each prompt style was represented by a transparent keyword-based classifier. This does not replace a real LLM evaluation, but it makes the behavior inspectable and reproducible without external API access.
 
-## 6. Hyperparameters
+## Hyperparameters
 
-No model training is used. The fixed settings are three prompt templates and the label set: positive, neutral, negative.
+No model was trained. The fixed settings were the three prompt policies and the three output labels: positive, neutral, and negative.
 
-## 7. Results
+## Results
 
-The best template on this tiny evaluation set was the short label prompt. Results are saved in `results/prompt_metrics.csv`, `results/all_prompt_predictions.csv`, and `results/prompt_accuracy.png`.
+| Prompt Policy | Accuracy |
+|---|---:|
+| short_label_prompt | 1.0000 |
+| clinical_cautious_prompt | 0.9333 |
+| balanced_reasoning_prompt | 0.9333 |
 
-## 8. Interpretation Of Results
+The result files include the labeled examples, all predictions, prompt-level metrics, classification reports, confusion matrices, and an accuracy figure.
 
-The cautious and balanced prompts avoid some overconfident decisions, but in this small synthetic set the short label prompt performs best because its keyword coverage exactly matches the examples. This is a warning: a tiny benchmark can over-reward a simple rule.
+## Interpretation
 
-## 9. Conclusion
+The short label prompt reached the best accuracy on this small set. This does not prove it is generally better. It means the examples matched the vocabulary of the short prompt very well. The cautious and balanced prompts made fewer direct assumptions, but they also missed some examples.
 
-Prompt evaluation must be empirical. Even a simple test shows that different instructions can change classification behavior.
+The important lesson is methodological: prompt evaluation needs more than a few examples. A small set is useful for debugging, but a serious conclusion requires larger and more diverse data.
 
-## 10. How To Run
+## Conclusion
+
+We built a simple but clear prompt-evaluation pipeline. The next step would be to replace the transparent keyword policies with real LLM outputs and test on a public sentiment benchmark.
+
+## How To Run
 
 ```bash
 pip install -r requirements.txt
