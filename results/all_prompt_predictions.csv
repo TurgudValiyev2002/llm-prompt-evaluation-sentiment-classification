@@ -1,91 +1,742 @@
 prompt_template,text,slice,true_label,predicted_label,correct,rationale
-short_label_prompt,"The model is fast and accurate, I really like it.",plain_positive,positive,positive,True,"more positive evidence; positive=['accurate', 'fast', 'like']; negative=[]"
-short_label_prompt,This update solved my problem and saved time.,plain_positive,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
-short_label_prompt,"The interface feels clean, stable, and useful.",plain_positive,positive,positive,True,"more positive evidence; positive=['clean', 'stable', 'useful']; negative=[]"
-short_label_prompt,The battery life is excellent for edge deployment.,plain_positive,positive,positive,True,more positive evidence; positive=['excellent']; negative=[]
-short_label_prompt,I am happy with the clear documentation.,plain_positive,positive,positive,True,"more positive evidence; positive=['clear', 'happy']; negative=[]"
-short_label_prompt,The new dashboard is reliable and easy to understand.,plain_positive,positive,positive,True,"more positive evidence; positive=['easy', 'reliable']; negative=[]"
-short_label_prompt,The agent gave correct answers after the prompt was shortened.,llm_context,positive,positive,True,more positive evidence; positive=['correct']; negative=[]
-short_label_prompt,The detector improves recall without increasing latency.,ai_system,positive,positive,True,more positive evidence; positive=['improves']; negative=[]
-short_label_prompt,The deployment is simple and the logs are helpful.,engineering,positive,positive,True,more positive evidence; positive=['helpful']; negative=[]
-short_label_prompt,"The baseline is modest, but the improvement is meaningful.",mixed_clause,positive,positive,True,more positive evidence; positive=['meaningful']; negative=[]
-short_label_prompt,The agent failed twice and produced wrong answers.,plain_negative,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
-short_label_prompt,"The tool is slow, confusing, and unreliable.",plain_negative,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
-short_label_prompt,The results are noisy and the setup is painful.,plain_negative,negative,negative,True,"more negative evidence; positive=[]; negative=['noisy', 'painful']"
-short_label_prompt,The detector missed important objects in the image.,ai_system,negative,negative,True,more negative evidence; positive=[]; negative=['missed']
-short_label_prompt,The latency is unacceptable for real-time use.,edge_context,negative,negative,True,more negative evidence; positive=[]; negative=['unacceptable']
-short_label_prompt,"The output looks polished, but the factual errors are serious.",mixed_clause,negative,negative,True,more negative evidence; positive=[]; negative=['errors']
-short_label_prompt,The model is accurate on easy cases but unsafe on hard cases.,mixed_clause,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
-short_label_prompt,The prompt sounds confident while giving unsupported claims.,llm_context,negative,negative,True,more negative evidence; positive=[]; negative=['unsupported']
-short_label_prompt,The benchmark score dropped after quantization.,ai_system,negative,negative,True,more negative evidence; positive=[]; negative=['dropped']
-short_label_prompt,The system crashes when the input is longer than expected.,engineering,negative,negative,True,more negative evidence; positive=[]; negative=['crashes']
-short_label_prompt,The paper is interesting but the evidence is limited.,academic,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-short_label_prompt,The dataset contains 1000 samples and 12 features.,metadata,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-short_label_prompt,The method uses logistic regression as a baseline.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-short_label_prompt,The report describes training and evaluation steps.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-short_label_prompt,The system runs on CPU and stores logs locally.,engineering,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-short_label_prompt,The experiment compares three prompt templates.,llm_context,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-short_label_prompt,The model was evaluated on validation and test splits.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-short_label_prompt,"The paper reports accuracy, F1 score, and confusion matrices.",academic,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-short_label_prompt,The pipeline stores predictions in a CSV file.,engineering,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-short_label_prompt,"The result is not bad, but it is not clearly good either.",ambiguous,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,"The model is fast and accurate, I really like it.",plain_positive,positive,neutral,False,neutral tie/bias; positive=['accurate']; negative=[]
-clinical_cautious_prompt,This update solved my problem and saved time.,plain_positive,positive,neutral,False,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,"The interface feels clean, stable, and useful.",plain_positive,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
-clinical_cautious_prompt,The battery life is excellent for edge deployment.,plain_positive,positive,neutral,False,neutral tie/bias; positive=['excellent']; negative=[]
-clinical_cautious_prompt,I am happy with the clear documentation.,plain_positive,positive,neutral,False,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,The new dashboard is reliable and easy to understand.,plain_positive,positive,neutral,False,neutral tie/bias; positive=['reliable']; negative=[]
-clinical_cautious_prompt,The agent gave correct answers after the prompt was shortened.,llm_context,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
-clinical_cautious_prompt,The detector improves recall without increasing latency.,ai_system,positive,neutral,False,neutral tie/bias; positive=['improves']; negative=[]
-clinical_cautious_prompt,The deployment is simple and the logs are helpful.,engineering,positive,neutral,False,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,"The baseline is modest, but the improvement is meaningful.",mixed_clause,positive,neutral,False,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,The agent failed twice and produced wrong answers.,plain_negative,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
-clinical_cautious_prompt,"The tool is slow, confusing, and unreliable.",plain_negative,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
-clinical_cautious_prompt,The results are noisy and the setup is painful.,plain_negative,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,The detector missed important objects in the image.,ai_system,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
-clinical_cautious_prompt,The latency is unacceptable for real-time use.,edge_context,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unacceptable']
-clinical_cautious_prompt,"The output looks polished, but the factual errors are serious.",mixed_clause,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,The model is accurate on easy cases but unsafe on hard cases.,mixed_clause,negative,neutral,False,neutral tie/bias; positive=['accurate']; negative=['unsafe']
-clinical_cautious_prompt,The prompt sounds confident while giving unsupported claims.,llm_context,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unsupported']
-clinical_cautious_prompt,The benchmark score dropped after quantization.,ai_system,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,The system crashes when the input is longer than expected.,engineering,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashes']
-clinical_cautious_prompt,The paper is interesting but the evidence is limited.,academic,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,The dataset contains 1000 samples and 12 features.,metadata,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,The method uses logistic regression as a baseline.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,The report describes training and evaluation steps.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,The system runs on CPU and stores logs locally.,engineering,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,The experiment compares three prompt templates.,llm_context,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,The model was evaluated on validation and test splits.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,"The paper reports accuracy, F1 score, and confusion matrices.",academic,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,The pipeline stores predictions in a CSV file.,engineering,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-clinical_cautious_prompt,"The result is not bad, but it is not clearly good either.",ambiguous,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-balanced_reasoning_prompt,"The model is fast and accurate, I really like it.",plain_positive,positive,positive,True,"more positive evidence; positive=['accurate', 'fast', 'like']; negative=[]"
-balanced_reasoning_prompt,This update solved my problem and saved time.,plain_positive,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
-balanced_reasoning_prompt,"The interface feels clean, stable, and useful.",plain_positive,positive,positive,True,"more positive evidence; positive=['clean', 'stable', 'useful']; negative=[]"
-balanced_reasoning_prompt,The battery life is excellent for edge deployment.,plain_positive,positive,positive,True,more positive evidence; positive=['excellent']; negative=[]
-balanced_reasoning_prompt,I am happy with the clear documentation.,plain_positive,positive,positive,True,"more positive evidence; positive=['clear', 'happy']; negative=[]"
-balanced_reasoning_prompt,The new dashboard is reliable and easy to understand.,plain_positive,positive,positive,True,"more positive evidence; positive=['easy', 'reliable']; negative=[]"
-balanced_reasoning_prompt,The agent gave correct answers after the prompt was shortened.,llm_context,positive,positive,True,more positive evidence; positive=['correct']; negative=[]
-balanced_reasoning_prompt,The detector improves recall without increasing latency.,ai_system,positive,positive,True,more positive evidence; positive=['improves']; negative=[]
-balanced_reasoning_prompt,The deployment is simple and the logs are helpful.,engineering,positive,positive,True,more positive evidence; positive=['helpful']; negative=[]
-balanced_reasoning_prompt,"The baseline is modest, but the improvement is meaningful.",mixed_clause,positive,positive,True,more positive evidence; positive=['meaningful']; negative=[]
-balanced_reasoning_prompt,The agent failed twice and produced wrong answers.,plain_negative,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
-balanced_reasoning_prompt,"The tool is slow, confusing, and unreliable.",plain_negative,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
-balanced_reasoning_prompt,The results are noisy and the setup is painful.,plain_negative,negative,negative,True,"more negative evidence; positive=[]; negative=['noisy', 'painful']"
-balanced_reasoning_prompt,The detector missed important objects in the image.,ai_system,negative,negative,True,more negative evidence; positive=[]; negative=['missed']
-balanced_reasoning_prompt,The latency is unacceptable for real-time use.,edge_context,negative,negative,True,more negative evidence; positive=[]; negative=['unacceptable']
-balanced_reasoning_prompt,"The output looks polished, but the factual errors are serious.",mixed_clause,negative,negative,True,"more negative evidence; positive=['polished']; negative=['errors', 'serious']"
-balanced_reasoning_prompt,The model is accurate on easy cases but unsafe on hard cases.,mixed_clause,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
-balanced_reasoning_prompt,The prompt sounds confident while giving unsupported claims.,llm_context,negative,negative,True,more negative evidence; positive=[]; negative=['unsupported']
-balanced_reasoning_prompt,The benchmark score dropped after quantization.,ai_system,negative,negative,True,more negative evidence; positive=[]; negative=['dropped']
-balanced_reasoning_prompt,The system crashes when the input is longer than expected.,engineering,negative,negative,True,more negative evidence; positive=[]; negative=['crashes']
-balanced_reasoning_prompt,The paper is interesting but the evidence is limited.,academic,neutral,negative,False,more negative evidence; positive=[]; negative=['limited']
-balanced_reasoning_prompt,The dataset contains 1000 samples and 12 features.,metadata,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-balanced_reasoning_prompt,The method uses logistic regression as a baseline.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-balanced_reasoning_prompt,The report describes training and evaluation steps.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-balanced_reasoning_prompt,The system runs on CPU and stores logs locally.,engineering,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-balanced_reasoning_prompt,The experiment compares three prompt templates.,llm_context,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-balanced_reasoning_prompt,The model was evaluated on validation and test splits.,method_description,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-balanced_reasoning_prompt,"The paper reports accuracy, F1 score, and confusion matrices.",academic,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-balanced_reasoning_prompt,The pipeline stores predictions in a CSV file.,engineering,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
-balanced_reasoning_prompt,"The result is not bad, but it is not clearly good either.",ambiguous,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The model is fast, stable, and useful for edge deployment.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The model is fast, stable, and useful for medical triage.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The model is fast, stable, and useful for scientific retrieval.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The agent is fast, stable, and useful for edge deployment.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The agent is fast, stable, and useful for medical triage.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The agent is fast, stable, and useful for scientific retrieval.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The detector is fast, stable, and useful for edge deployment.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The detector is fast, stable, and useful for medical triage.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The detector is fast, stable, and useful for scientific retrieval.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The retriever is fast, stable, and useful for edge deployment.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The retriever is fast, stable, and useful for medical triage.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The retriever is fast, stable, and useful for scientific retrieval.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The pipeline is fast, stable, and useful for edge deployment.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The pipeline is fast, stable, and useful for medical triage.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The pipeline is fast, stable, and useful for scientific retrieval.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The dashboard is fast, stable, and useful for edge deployment.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The dashboard is fast, stable, and useful for medical triage.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,"The dashboard is fast, stable, and useful for scientific retrieval.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+short_label_prompt,The model improved latency without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The model improved macro F1 without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The model improved calibration without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The agent improved retrieval precision without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The agent improved accuracy without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The agent improved recall without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The detector improved latency without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The detector improved macro F1 without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The detector improved calibration without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The retriever improved retrieval precision without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The retriever improved accuracy without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The retriever improved recall without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The pipeline improved latency without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The pipeline improved macro F1 without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The pipeline improved calibration without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The dashboard improved retrieval precision without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The dashboard improved accuracy without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The dashboard improved recall without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+short_label_prompt,The model gave correct answers and clear explanations for edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The model gave correct answers and clear explanations for medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The model gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The agent gave correct answers and clear explanations for edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The agent gave correct answers and clear explanations for medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The agent gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The detector gave correct answers and clear explanations for edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The detector gave correct answers and clear explanations for medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The detector gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The retriever gave correct answers and clear explanations for edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The retriever gave correct answers and clear explanations for medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The retriever gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The pipeline gave correct answers and clear explanations for edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The pipeline gave correct answers and clear explanations for medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The pipeline gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The dashboard gave correct answers and clear explanations for edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The dashboard gave correct answers and clear explanations for medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The dashboard gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+short_label_prompt,The model solved the problem and saved time during edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The model solved the problem and saved time during medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The model solved the problem and saved time during scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The agent solved the problem and saved time during edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The agent solved the problem and saved time during medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The agent solved the problem and saved time during scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The detector solved the problem and saved time during edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The detector solved the problem and saved time during medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The detector solved the problem and saved time during scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The retriever solved the problem and saved time during edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The retriever solved the problem and saved time during medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The retriever solved the problem and saved time during scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The pipeline solved the problem and saved time during edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The pipeline solved the problem and saved time during medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The pipeline solved the problem and saved time during scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The dashboard solved the problem and saved time during edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The dashboard solved the problem and saved time during medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,The dashboard solved the problem and saved time during scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+short_label_prompt,"The model is reliable, easy to use, and well documented.",positive_clear,positive,positive,True,"more positive evidence; positive=['documented', 'easy', 'reliable', 'well']; negative=[]"
+short_label_prompt,"The agent is reliable, easy to use, and well documented.",positive_clear,positive,positive,True,"more positive evidence; positive=['documented', 'easy', 'reliable', 'well']; negative=[]"
+short_label_prompt,"The detector is reliable, easy to use, and well documented.",positive_clear,positive,positive,True,"more positive evidence; positive=['documented', 'easy', 'reliable', 'well']; negative=[]"
+short_label_prompt,"The retriever is reliable, easy to use, and well documented.",positive_clear,positive,positive,True,"more positive evidence; positive=['documented', 'easy', 'reliable', 'well']; negative=[]"
+short_label_prompt,"The pipeline is reliable, easy to use, and well documented.",positive_clear,positive,positive,True,"more positive evidence; positive=['documented', 'easy', 'reliable', 'well']; negative=[]"
+short_label_prompt,"The dashboard is reliable, easy to use, and well documented.",positive_clear,positive,positive,True,"more positive evidence; positive=['documented', 'easy', 'reliable', 'well']; negative=[]"
+short_label_prompt,The model failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The model failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The model failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The agent failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The agent failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The agent failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The detector failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The detector failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The detector failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The retriever failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The retriever failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The retriever failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The pipeline failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The pipeline failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The pipeline failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The dashboard failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The dashboard failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,The dashboard failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+short_label_prompt,"The model is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The model is slow, confusing, and unreliable for medical triage.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The model is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The agent is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The agent is slow, confusing, and unreliable for medical triage.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The agent is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The detector is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The detector is slow, confusing, and unreliable for medical triage.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The detector is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The retriever is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The retriever is slow, confusing, and unreliable for medical triage.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The retriever is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The pipeline is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The pipeline is slow, confusing, and unreliable for medical triage.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The pipeline is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The dashboard is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The dashboard is slow, confusing, and unreliable for medical triage.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,"The dashboard is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+short_label_prompt,The model missed important cases and reduced latency.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The model missed important cases and reduced macro F1.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The model missed important cases and reduced calibration.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The agent missed important cases and reduced retrieval precision.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The agent missed important cases and reduced accuracy.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The agent missed important cases and reduced recall.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The detector missed important cases and reduced latency.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The detector missed important cases and reduced macro F1.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The detector missed important cases and reduced calibration.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The retriever missed important cases and reduced retrieval precision.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The retriever missed important cases and reduced accuracy.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The retriever missed important cases and reduced recall.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The pipeline missed important cases and reduced latency.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The pipeline missed important cases and reduced macro F1.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The pipeline missed important cases and reduced calibration.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The dashboard missed important cases and reduced retrieval precision.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The dashboard missed important cases and reduced accuracy.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The dashboard missed important cases and reduced recall.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+short_label_prompt,The model looks polished but the factual errors are serious.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['errors', 'serious']"
+short_label_prompt,The agent looks polished but the factual errors are serious.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['errors', 'serious']"
+short_label_prompt,The detector looks polished but the factual errors are serious.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['errors', 'serious']"
+short_label_prompt,The retriever looks polished but the factual errors are serious.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['errors', 'serious']"
+short_label_prompt,The pipeline looks polished but the factual errors are serious.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['errors', 'serious']"
+short_label_prompt,The dashboard looks polished but the factual errors are serious.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['errors', 'serious']"
+short_label_prompt,The model crashed when edge deployment became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The model crashed when medical triage became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The model crashed when scientific retrieval became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The agent crashed when edge deployment became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The agent crashed when medical triage became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The agent crashed when scientific retrieval became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The detector crashed when edge deployment became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The detector crashed when medical triage became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The detector crashed when scientific retrieval became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The retriever crashed when edge deployment became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The retriever crashed when medical triage became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The retriever crashed when scientific retrieval became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The pipeline crashed when edge deployment became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The pipeline crashed when medical triage became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The pipeline crashed when scientific retrieval became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The dashboard crashed when edge deployment became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The dashboard crashed when medical triage became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The dashboard crashed when scientific retrieval became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+short_label_prompt,The model was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The agent was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The detector was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The retriever was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The pipeline was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The dashboard was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The model uses federated averaging as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The model uses TF-IDF retrieval as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The model uses quantization as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The agent uses graph smoothing as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The agent uses early stopping as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The agent uses logistic regression as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The detector uses federated averaging as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The detector uses TF-IDF retrieval as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The detector uses quantization as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The retriever uses graph smoothing as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The retriever uses early stopping as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The retriever uses logistic regression as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The pipeline uses federated averaging as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The pipeline uses TF-IDF retrieval as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The pipeline uses quantization as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The dashboard uses graph smoothing as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The dashboard uses early stopping as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The dashboard uses logistic regression as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The report describes latency, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The report describes macro F1, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The report describes calibration, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The report describes retrieval precision, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The report describes accuracy, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The report describes recall, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The experiment stores predictions and metrics in CSV files.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The paper compares federated averaging with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The paper compares TF-IDF retrieval with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The paper compares quantization with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The paper compares graph smoothing with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The paper compares early stopping with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The paper compares logistic regression with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,The model is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+short_label_prompt,The agent is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+short_label_prompt,The detector is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+short_label_prompt,The retriever is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+short_label_prompt,The pipeline is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+short_label_prompt,The dashboard is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+short_label_prompt,"The model improves latency, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The model improves macro F1, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The model improves calibration, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The agent improves retrieval precision, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The agent improves accuracy, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The agent improves recall, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The detector improves latency, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The detector improves macro F1, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The detector improves calibration, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The retriever improves retrieval precision, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The retriever improves accuracy, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The retriever improves recall, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The pipeline improves latency, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The pipeline improves macro F1, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The pipeline improves calibration, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The dashboard improves retrieval precision, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The dashboard improves accuracy, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The dashboard improves recall, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+short_label_prompt,"The model is fast, but the errors are serious for edge deployment.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The model is fast, but the errors are serious for medical triage.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The model is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The agent is fast, but the errors are serious for edge deployment.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The agent is fast, but the errors are serious for medical triage.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The agent is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The detector is fast, but the errors are serious for edge deployment.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The detector is fast, but the errors are serious for medical triage.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The detector is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The retriever is fast, but the errors are serious for edge deployment.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The retriever is fast, but the errors are serious for medical triage.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The retriever is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The pipeline is fast, but the errors are serious for edge deployment.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The pipeline is fast, but the errors are serious for medical triage.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The pipeline is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The dashboard is fast, but the errors are serious for edge deployment.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The dashboard is fast, but the errors are serious for medical triage.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,"The dashboard is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+short_label_prompt,The model is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=['useful']; negative=['unreliable']
+short_label_prompt,The agent is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=['useful']; negative=['unreliable']
+short_label_prompt,The detector is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=['useful']; negative=['unreliable']
+short_label_prompt,The retriever is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=['useful']; negative=['unreliable']
+short_label_prompt,The pipeline is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=['useful']; negative=['unreliable']
+short_label_prompt,The dashboard is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=['useful']; negative=['unreliable']
+short_label_prompt,"The model gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=['clear']; negative=['unsupported']
+short_label_prompt,"The agent gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=['clear']; negative=['unsupported']
+short_label_prompt,"The detector gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=['clear']; negative=['unsupported']
+short_label_prompt,"The retriever gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=['clear']; negative=['unsupported']
+short_label_prompt,"The pipeline gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=['clear']; negative=['unsupported']
+short_label_prompt,"The dashboard gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=['clear']; negative=['unsupported']
+clinical_cautious_prompt,"The model is fast, stable, and useful for edge deployment.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The model is fast, stable, and useful for medical triage.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The model is fast, stable, and useful for scientific retrieval.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The agent is fast, stable, and useful for edge deployment.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The agent is fast, stable, and useful for medical triage.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The agent is fast, stable, and useful for scientific retrieval.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The detector is fast, stable, and useful for edge deployment.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The detector is fast, stable, and useful for medical triage.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The detector is fast, stable, and useful for scientific retrieval.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The retriever is fast, stable, and useful for edge deployment.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The retriever is fast, stable, and useful for medical triage.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The retriever is fast, stable, and useful for scientific retrieval.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The pipeline is fast, stable, and useful for edge deployment.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The pipeline is fast, stable, and useful for medical triage.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The pipeline is fast, stable, and useful for scientific retrieval.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The dashboard is fast, stable, and useful for edge deployment.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The dashboard is fast, stable, and useful for medical triage.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,"The dashboard is fast, stable, and useful for scientific retrieval.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['stable']; negative=[]
+clinical_cautious_prompt,The model improved latency without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The model improved macro F1 without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The model improved calibration without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The agent improved retrieval precision without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The agent improved accuracy without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The agent improved recall without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The detector improved latency without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The detector improved macro F1 without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The detector improved calibration without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The retriever improved retrieval precision without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The retriever improved accuracy without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The retriever improved recall without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The pipeline improved latency without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The pipeline improved macro F1 without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The pipeline improved calibration without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The dashboard improved retrieval precision without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The dashboard improved accuracy without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The dashboard improved recall without increasing latency.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['improved']; negative=[]
+clinical_cautious_prompt,The model gave correct answers and clear explanations for edge deployment.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The model gave correct answers and clear explanations for medical triage.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The model gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The agent gave correct answers and clear explanations for edge deployment.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The agent gave correct answers and clear explanations for medical triage.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The agent gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The detector gave correct answers and clear explanations for edge deployment.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The detector gave correct answers and clear explanations for medical triage.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The detector gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The retriever gave correct answers and clear explanations for edge deployment.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The retriever gave correct answers and clear explanations for medical triage.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The retriever gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The pipeline gave correct answers and clear explanations for edge deployment.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The pipeline gave correct answers and clear explanations for medical triage.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The pipeline gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The dashboard gave correct answers and clear explanations for edge deployment.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The dashboard gave correct answers and clear explanations for medical triage.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The dashboard gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['correct']; negative=[]
+clinical_cautious_prompt,The model solved the problem and saved time during edge deployment.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The model solved the problem and saved time during medical triage.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The model solved the problem and saved time during scientific retrieval.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The agent solved the problem and saved time during edge deployment.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The agent solved the problem and saved time during medical triage.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The agent solved the problem and saved time during scientific retrieval.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The detector solved the problem and saved time during edge deployment.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The detector solved the problem and saved time during medical triage.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The detector solved the problem and saved time during scientific retrieval.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The retriever solved the problem and saved time during edge deployment.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The retriever solved the problem and saved time during medical triage.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The retriever solved the problem and saved time during scientific retrieval.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The pipeline solved the problem and saved time during edge deployment.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The pipeline solved the problem and saved time during medical triage.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The pipeline solved the problem and saved time during scientific retrieval.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The dashboard solved the problem and saved time during edge deployment.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The dashboard solved the problem and saved time during medical triage.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,The dashboard solved the problem and saved time during scientific retrieval.,positive_clear,positive,neutral,False,neutral tie/bias; positive=['solved']; negative=[]
+clinical_cautious_prompt,"The model is reliable, easy to use, and well documented.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['reliable']; negative=[]
+clinical_cautious_prompt,"The agent is reliable, easy to use, and well documented.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['reliable']; negative=[]
+clinical_cautious_prompt,"The detector is reliable, easy to use, and well documented.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['reliable']; negative=[]
+clinical_cautious_prompt,"The retriever is reliable, easy to use, and well documented.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['reliable']; negative=[]
+clinical_cautious_prompt,"The pipeline is reliable, easy to use, and well documented.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['reliable']; negative=[]
+clinical_cautious_prompt,"The dashboard is reliable, easy to use, and well documented.",positive_clear,positive,neutral,False,neutral tie/bias; positive=['reliable']; negative=[]
+clinical_cautious_prompt,The model failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The model failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The model failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The agent failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The agent failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The agent failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The detector failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The detector failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The detector failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The retriever failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The retriever failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The retriever failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The pipeline failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The pipeline failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The pipeline failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The dashboard failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The dashboard failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,The dashboard failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+clinical_cautious_prompt,"The model is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The model is slow, confusing, and unreliable for medical triage.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The model is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The agent is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The agent is slow, confusing, and unreliable for medical triage.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The agent is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The detector is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The detector is slow, confusing, and unreliable for medical triage.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The detector is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The retriever is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The retriever is slow, confusing, and unreliable for medical triage.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The retriever is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The pipeline is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The pipeline is slow, confusing, and unreliable for medical triage.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The pipeline is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The dashboard is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The dashboard is slow, confusing, and unreliable for medical triage.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The dashboard is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,The model missed important cases and reduced latency.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The model missed important cases and reduced macro F1.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The model missed important cases and reduced calibration.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The agent missed important cases and reduced retrieval precision.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The agent missed important cases and reduced accuracy.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The agent missed important cases and reduced recall.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The detector missed important cases and reduced latency.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The detector missed important cases and reduced macro F1.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The detector missed important cases and reduced calibration.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The retriever missed important cases and reduced retrieval precision.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The retriever missed important cases and reduced accuracy.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The retriever missed important cases and reduced recall.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The pipeline missed important cases and reduced latency.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The pipeline missed important cases and reduced macro F1.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The pipeline missed important cases and reduced calibration.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The dashboard missed important cases and reduced retrieval precision.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The dashboard missed important cases and reduced accuracy.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The dashboard missed important cases and reduced recall.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['missed']
+clinical_cautious_prompt,The model looks polished but the factual errors are serious.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,The agent looks polished but the factual errors are serious.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,The detector looks polished but the factual errors are serious.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,The retriever looks polished but the factual errors are serious.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,The pipeline looks polished but the factual errors are serious.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,The dashboard looks polished but the factual errors are serious.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,The model crashed when edge deployment became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The model crashed when medical triage became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The model crashed when scientific retrieval became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The agent crashed when edge deployment became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The agent crashed when medical triage became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The agent crashed when scientific retrieval became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The detector crashed when edge deployment became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The detector crashed when medical triage became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The detector crashed when scientific retrieval became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The retriever crashed when edge deployment became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The retriever crashed when medical triage became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The retriever crashed when scientific retrieval became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The pipeline crashed when edge deployment became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The pipeline crashed when medical triage became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The pipeline crashed when scientific retrieval became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The dashboard crashed when edge deployment became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The dashboard crashed when medical triage became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The dashboard crashed when scientific retrieval became more complex.,negative_clear,negative,neutral,False,neutral tie/bias; positive=[]; negative=['crashed']
+clinical_cautious_prompt,The model was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The agent was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The detector was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The retriever was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The pipeline was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The dashboard was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The model uses federated averaging as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The model uses TF-IDF retrieval as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The model uses quantization as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The agent uses graph smoothing as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The agent uses early stopping as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The agent uses logistic regression as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The detector uses federated averaging as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The detector uses TF-IDF retrieval as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The detector uses quantization as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The retriever uses graph smoothing as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The retriever uses early stopping as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The retriever uses logistic regression as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The pipeline uses federated averaging as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The pipeline uses TF-IDF retrieval as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The pipeline uses quantization as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The dashboard uses graph smoothing as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The dashboard uses early stopping as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The dashboard uses logistic regression as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The report describes latency, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The report describes macro F1, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The report describes calibration, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The report describes retrieval precision, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The report describes accuracy, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The report describes recall, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The experiment stores predictions and metrics in CSV files.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The paper compares federated averaging with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The paper compares TF-IDF retrieval with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The paper compares quantization with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The paper compares graph smoothing with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The paper compares early stopping with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The paper compares logistic regression with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,The model is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unsafe']
+clinical_cautious_prompt,The agent is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unsafe']
+clinical_cautious_prompt,The detector is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unsafe']
+clinical_cautious_prompt,The retriever is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unsafe']
+clinical_cautious_prompt,The pipeline is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unsafe']
+clinical_cautious_prompt,The dashboard is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unsafe']
+clinical_cautious_prompt,"The model improves latency, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The model improves macro F1, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The model improves calibration, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The agent improves retrieval precision, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The agent improves accuracy, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The agent improves recall, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The detector improves latency, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The detector improves macro F1, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The detector improves calibration, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The retriever improves retrieval precision, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The retriever improves accuracy, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The retriever improves recall, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The pipeline improves latency, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The pipeline improves macro F1, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The pipeline improves calibration, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The dashboard improves retrieval precision, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The dashboard improves accuracy, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The dashboard improves recall, but the evidence is limited.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The model is fast, but the errors are serious for edge deployment.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The model is fast, but the errors are serious for medical triage.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The model is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The agent is fast, but the errors are serious for edge deployment.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The agent is fast, but the errors are serious for medical triage.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The agent is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The detector is fast, but the errors are serious for edge deployment.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The detector is fast, but the errors are serious for medical triage.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The detector is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The retriever is fast, but the errors are serious for edge deployment.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The retriever is fast, but the errors are serious for medical triage.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The retriever is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The pipeline is fast, but the errors are serious for edge deployment.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The pipeline is fast, but the errors are serious for medical triage.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The pipeline is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The dashboard is fast, but the errors are serious for edge deployment.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The dashboard is fast, but the errors are serious for medical triage.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,"The dashboard is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['errors']
+clinical_cautious_prompt,The model is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,The agent is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,The detector is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,The retriever is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,The pipeline is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,The dashboard is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=['unreliable']
+clinical_cautious_prompt,"The model gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The agent gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The detector gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The retriever gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The pipeline gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+clinical_cautious_prompt,"The dashboard gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,"The model is fast, stable, and useful for edge deployment.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The model is fast, stable, and useful for medical triage.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The model is fast, stable, and useful for scientific retrieval.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The agent is fast, stable, and useful for edge deployment.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The agent is fast, stable, and useful for medical triage.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The agent is fast, stable, and useful for scientific retrieval.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The detector is fast, stable, and useful for edge deployment.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The detector is fast, stable, and useful for medical triage.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The detector is fast, stable, and useful for scientific retrieval.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The retriever is fast, stable, and useful for edge deployment.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The retriever is fast, stable, and useful for medical triage.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The retriever is fast, stable, and useful for scientific retrieval.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The pipeline is fast, stable, and useful for edge deployment.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The pipeline is fast, stable, and useful for medical triage.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The pipeline is fast, stable, and useful for scientific retrieval.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The dashboard is fast, stable, and useful for edge deployment.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The dashboard is fast, stable, and useful for medical triage.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,"The dashboard is fast, stable, and useful for scientific retrieval.",positive_clear,positive,positive,True,"more positive evidence; positive=['fast', 'stable', 'useful']; negative=[]"
+balanced_reasoning_prompt,The model improved latency without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The model improved macro F1 without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The model improved calibration without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The agent improved retrieval precision without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The agent improved accuracy without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The agent improved recall without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The detector improved latency without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The detector improved macro F1 without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The detector improved calibration without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The retriever improved retrieval precision without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The retriever improved accuracy without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The retriever improved recall without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The pipeline improved latency without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The pipeline improved macro F1 without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The pipeline improved calibration without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The dashboard improved retrieval precision without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The dashboard improved accuracy without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The dashboard improved recall without increasing latency.,positive_clear,positive,positive,True,more positive evidence; positive=['improved']; negative=[]
+balanced_reasoning_prompt,The model gave correct answers and clear explanations for edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The model gave correct answers and clear explanations for medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The model gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The agent gave correct answers and clear explanations for edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The agent gave correct answers and clear explanations for medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The agent gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The detector gave correct answers and clear explanations for edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The detector gave correct answers and clear explanations for medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The detector gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The retriever gave correct answers and clear explanations for edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The retriever gave correct answers and clear explanations for medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The retriever gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The pipeline gave correct answers and clear explanations for edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The pipeline gave correct answers and clear explanations for medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The pipeline gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The dashboard gave correct answers and clear explanations for edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The dashboard gave correct answers and clear explanations for medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The dashboard gave correct answers and clear explanations for scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['clear', 'correct']; negative=[]"
+balanced_reasoning_prompt,The model solved the problem and saved time during edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The model solved the problem and saved time during medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The model solved the problem and saved time during scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The agent solved the problem and saved time during edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The agent solved the problem and saved time during medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The agent solved the problem and saved time during scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The detector solved the problem and saved time during edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The detector solved the problem and saved time during medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The detector solved the problem and saved time during scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The retriever solved the problem and saved time during edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The retriever solved the problem and saved time during medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The retriever solved the problem and saved time during scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The pipeline solved the problem and saved time during edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The pipeline solved the problem and saved time during medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The pipeline solved the problem and saved time during scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The dashboard solved the problem and saved time during edge deployment.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The dashboard solved the problem and saved time during medical triage.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,The dashboard solved the problem and saved time during scientific retrieval.,positive_clear,positive,positive,True,"more positive evidence; positive=['saved', 'solved']; negative=[]"
+balanced_reasoning_prompt,"The model is reliable, easy to use, and well documented.",positive_clear,positive,positive,True,"more positive evidence; positive=['documented', 'easy', 'reliable']; negative=[]"
+balanced_reasoning_prompt,"The agent is reliable, easy to use, and well documented.",positive_clear,positive,positive,True,"more positive evidence; positive=['documented', 'easy', 'reliable']; negative=[]"
+balanced_reasoning_prompt,"The detector is reliable, easy to use, and well documented.",positive_clear,positive,positive,True,"more positive evidence; positive=['documented', 'easy', 'reliable']; negative=[]"
+balanced_reasoning_prompt,"The retriever is reliable, easy to use, and well documented.",positive_clear,positive,positive,True,"more positive evidence; positive=['documented', 'easy', 'reliable']; negative=[]"
+balanced_reasoning_prompt,"The pipeline is reliable, easy to use, and well documented.",positive_clear,positive,positive,True,"more positive evidence; positive=['documented', 'easy', 'reliable']; negative=[]"
+balanced_reasoning_prompt,"The dashboard is reliable, easy to use, and well documented.",positive_clear,positive,positive,True,"more positive evidence; positive=['documented', 'easy', 'reliable']; negative=[]"
+balanced_reasoning_prompt,The model failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The model failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The model failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The agent failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The agent failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The agent failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The detector failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The detector failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The detector failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The retriever failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The retriever failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The retriever failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The pipeline failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The pipeline failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The pipeline failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The dashboard failed during edge deployment and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The dashboard failed during medical triage and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,The dashboard failed during scientific retrieval and produced wrong answers.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['failed', 'wrong']"
+balanced_reasoning_prompt,"The model is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The model is slow, confusing, and unreliable for medical triage.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The model is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The agent is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The agent is slow, confusing, and unreliable for medical triage.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The agent is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The detector is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The detector is slow, confusing, and unreliable for medical triage.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The detector is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The retriever is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The retriever is slow, confusing, and unreliable for medical triage.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The retriever is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The pipeline is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The pipeline is slow, confusing, and unreliable for medical triage.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The pipeline is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The dashboard is slow, confusing, and unreliable for edge deployment.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The dashboard is slow, confusing, and unreliable for medical triage.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,"The dashboard is slow, confusing, and unreliable for scientific retrieval.",negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['confusing', 'slow', 'unreliable']"
+balanced_reasoning_prompt,The model missed important cases and reduced latency.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The model missed important cases and reduced macro F1.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The model missed important cases and reduced calibration.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The agent missed important cases and reduced retrieval precision.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The agent missed important cases and reduced accuracy.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The agent missed important cases and reduced recall.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The detector missed important cases and reduced latency.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The detector missed important cases and reduced macro F1.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The detector missed important cases and reduced calibration.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The retriever missed important cases and reduced retrieval precision.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The retriever missed important cases and reduced accuracy.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The retriever missed important cases and reduced recall.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The pipeline missed important cases and reduced latency.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The pipeline missed important cases and reduced macro F1.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The pipeline missed important cases and reduced calibration.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The dashboard missed important cases and reduced retrieval precision.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The dashboard missed important cases and reduced accuracy.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The dashboard missed important cases and reduced recall.,negative_clear,negative,negative,True,"more negative evidence; positive=[]; negative=['missed', 'reduced']"
+balanced_reasoning_prompt,The model looks polished but the factual errors are serious.,negative_clear,negative,negative,True,"more negative evidence; positive=['polished']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,The agent looks polished but the factual errors are serious.,negative_clear,negative,negative,True,"more negative evidence; positive=['polished']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,The detector looks polished but the factual errors are serious.,negative_clear,negative,negative,True,"more negative evidence; positive=['polished']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,The retriever looks polished but the factual errors are serious.,negative_clear,negative,negative,True,"more negative evidence; positive=['polished']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,The pipeline looks polished but the factual errors are serious.,negative_clear,negative,negative,True,"more negative evidence; positive=['polished']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,The dashboard looks polished but the factual errors are serious.,negative_clear,negative,negative,True,"more negative evidence; positive=['polished']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,The model crashed when edge deployment became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The model crashed when medical triage became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The model crashed when scientific retrieval became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The agent crashed when edge deployment became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The agent crashed when medical triage became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The agent crashed when scientific retrieval became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The detector crashed when edge deployment became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The detector crashed when medical triage became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The detector crashed when scientific retrieval became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The retriever crashed when edge deployment became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The retriever crashed when medical triage became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The retriever crashed when scientific retrieval became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The pipeline crashed when edge deployment became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The pipeline crashed when medical triage became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The pipeline crashed when scientific retrieval became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The dashboard crashed when edge deployment became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The dashboard crashed when medical triage became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The dashboard crashed when scientific retrieval became more complex.,negative_clear,negative,negative,True,more negative evidence; positive=[]; negative=['crashed']
+balanced_reasoning_prompt,The model was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The agent was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The detector was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The retriever was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The pipeline was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The dashboard was evaluated on validation and test splits.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The model uses federated averaging as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The model uses TF-IDF retrieval as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The model uses quantization as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The agent uses graph smoothing as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The agent uses early stopping as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The agent uses logistic regression as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The detector uses federated averaging as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The detector uses TF-IDF retrieval as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The detector uses quantization as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The retriever uses graph smoothing as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The retriever uses early stopping as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The retriever uses logistic regression as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The pipeline uses federated averaging as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The pipeline uses TF-IDF retrieval as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The pipeline uses quantization as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The dashboard uses graph smoothing as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The dashboard uses early stopping as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The dashboard uses logistic regression as the main method.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,"The report describes latency, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,"The report describes macro F1, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,"The report describes calibration, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,"The report describes retrieval precision, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,"The report describes accuracy, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,"The report describes recall, data preprocessing, and evaluation.",neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The experiment stores predictions and metrics in CSV files.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The paper compares federated averaging with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The paper compares TF-IDF retrieval with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The paper compares quantization with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The paper compares graph smoothing with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The paper compares early stopping with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The paper compares logistic regression with a baseline model.,neutral_method,neutral,neutral,True,neutral tie/bias; positive=[]; negative=[]
+balanced_reasoning_prompt,The model is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+balanced_reasoning_prompt,The agent is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+balanced_reasoning_prompt,The detector is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+balanced_reasoning_prompt,The retriever is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+balanced_reasoning_prompt,The pipeline is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+balanced_reasoning_prompt,The dashboard is accurate on easy cases but unsafe on hard cases.,mixed_risk,negative,positive,False,"more positive evidence; positive=['accurate', 'easy']; negative=['unsafe']"
+balanced_reasoning_prompt,"The model improves latency, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The model improves macro F1, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The model improves calibration, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The agent improves retrieval precision, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The agent improves accuracy, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The agent improves recall, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The detector improves latency, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The detector improves macro F1, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The detector improves calibration, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The retriever improves retrieval precision, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The retriever improves accuracy, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The retriever improves recall, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The pipeline improves latency, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The pipeline improves macro F1, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The pipeline improves calibration, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The dashboard improves retrieval precision, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The dashboard improves accuracy, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The dashboard improves recall, but the evidence is limited.",mixed_risk,negative,negative,True,more negative evidence; positive=[]; negative=['limited']
+balanced_reasoning_prompt,"The model is fast, but the errors are serious for edge deployment.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The model is fast, but the errors are serious for medical triage.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The model is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The agent is fast, but the errors are serious for edge deployment.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The agent is fast, but the errors are serious for medical triage.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The agent is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The detector is fast, but the errors are serious for edge deployment.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The detector is fast, but the errors are serious for medical triage.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The detector is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The retriever is fast, but the errors are serious for edge deployment.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The retriever is fast, but the errors are serious for medical triage.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The retriever is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The pipeline is fast, but the errors are serious for edge deployment.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The pipeline is fast, but the errors are serious for medical triage.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The pipeline is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The dashboard is fast, but the errors are serious for edge deployment.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The dashboard is fast, but the errors are serious for medical triage.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,"The dashboard is fast, but the errors are serious for scientific retrieval.",mixed_risk,negative,negative,True,"more negative evidence; positive=['fast']; negative=['errors', 'serious']"
+balanced_reasoning_prompt,The model is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=['useful']; negative=['unreliable']
+balanced_reasoning_prompt,The agent is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=['useful']; negative=['unreliable']
+balanced_reasoning_prompt,The detector is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=['useful']; negative=['unreliable']
+balanced_reasoning_prompt,The retriever is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=['useful']; negative=['unreliable']
+balanced_reasoning_prompt,The pipeline is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=['useful']; negative=['unreliable']
+balanced_reasoning_prompt,The dashboard is useful in simple demos but unreliable in deployment.,mixed_risk,negative,neutral,False,neutral tie/bias; positive=['useful']; negative=['unreliable']
+balanced_reasoning_prompt,"The model gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=['clear']; negative=['unsupported']
+balanced_reasoning_prompt,"The agent gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=['clear']; negative=['unsupported']
+balanced_reasoning_prompt,"The detector gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=['clear']; negative=['unsupported']
+balanced_reasoning_prompt,"The retriever gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=['clear']; negative=['unsupported']
+balanced_reasoning_prompt,"The pipeline gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=['clear']; negative=['unsupported']
+balanced_reasoning_prompt,"The dashboard gives clear explanations, but some claims are unsupported.",mixed_risk,negative,neutral,False,neutral tie/bias; positive=['clear']; negative=['unsupported']

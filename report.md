@@ -1,39 +1,25 @@
-# Report: Prompt Evaluation for Sentiment Classification
+# One-Page Report: Prompt Evaluation for Sentiment Classification
 
 ## Motivation
 
-Prompt quality should be tested with evidence, not judged only by intuition. This lab studies how direct, cautious, and balanced prompt styles behave on the same sentiment classification examples.
+The first version used only 30 examples, which made slice-level results fragile. We expanded the benchmark to make prompt comparison more meaningful.
 
 ## Dataset
 
-The dataset contains 30 short sentences: 10 positive, 10 negative, and 10 neutral. The examples cover plain sentiment, AI-system feedback, engineering statements, academic descriptions, ambiguous wording, and mixed clauses.
-
-## Tools
-
-Python, pandas, scikit-learn metrics, and matplotlib.
+The dataset now has 247 labeled examples across clear positive, clear negative, neutral method/reporting, and mixed-risk slices. Labels are positive, neutral, and negative.
 
 ## Method
 
-Three prompt styles are implemented as transparent local policies. This keeps the lab reproducible without external API access. For each policy, the script saves prompt templates, predictions, rationales, aggregate metrics, slice metrics, confusion matrices, classification reports, and an error-analysis table.
-
-## Hyperparameters
-
-No model training is used. The experiment uses three labels, three prompt policies, 30 examples, and fixed neutral-bias settings. The cautious prompt has a stronger neutral bias than the direct and balanced prompts.
+We evaluated three deterministic prompt-policy simulators: a short label prompt, a cautious neutral-biased prompt, and a balanced reasoning prompt. We measured accuracy, macro F1, weighted F1, confusion matrices, slice metrics, and errors.
 
 ## Results
 
-| Prompt Policy | Accuracy | Macro F1 |
-|---|---:|---:|
-| short_label_prompt | 0.9667 | 0.9666 |
-| balanced_reasoning_prompt | 0.9333 | 0.9332 |
-| clinical_cautious_prompt | 0.3667 | 0.2315 |
-
-![Prompt evaluation scores](results/prompt_accuracy_macro_f1.png)
+The balanced reasoning prompt achieved 0.9271 accuracy and 0.9168 macro F1. The short label prompt achieved 0.8543 accuracy and 0.8389 macro F1. The cautious prompt achieved only 0.2227 accuracy and 0.1727 macro F1.
 
 ## Interpretation
 
-The direct prompt performs best on this controlled dataset. The balanced prompt is close, but it can overreact to negative evidence in mixed or academic sentences. The cautious prompt performs poorly because it predicts neutral too often. This is an important research lesson: conservative prompting can reduce risk in some settings, but it can also damage recall.
+The cautious prompt failed because it predicted neutral too often. This shows why a prompt that sounds careful can still perform poorly if the task requires clear positive or negative labels. The balanced prompt handled mixed evidence better.
 
 ## Conclusion
 
-The project gives a clean offline workflow for prompt evaluation. It should not be treated as a real LLM benchmark. The next step is to run the same evaluation structure with actual LLM outputs and a larger public sentiment dataset.
+The project is now a stronger prompt-evaluation demo. The next improvement should use a real LLM and a public sentiment dataset.

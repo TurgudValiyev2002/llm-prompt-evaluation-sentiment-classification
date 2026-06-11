@@ -1,4 +1,4 @@
 ,pred_positive,pred_neutral,pred_negative
-true_positive,0,10,0
-true_neutral,0,10,0
-true_negative,0,9,1
+true_positive,0,78,0
+true_neutral,0,37,0
+true_negative,0,114,18

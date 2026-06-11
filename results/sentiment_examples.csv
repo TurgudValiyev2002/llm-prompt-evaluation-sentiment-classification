@@ -1,31 +1,248 @@
 text,label,slice
-"The model is fast and accurate, I really like it.",positive,plain_positive
-This update solved my problem and saved time.,positive,plain_positive
-"The interface feels clean, stable, and useful.",positive,plain_positive
-The battery life is excellent for edge deployment.,positive,plain_positive
-I am happy with the clear documentation.,positive,plain_positive
-The new dashboard is reliable and easy to understand.,positive,plain_positive
-The agent gave correct answers after the prompt was shortened.,positive,llm_context
-The detector improves recall without increasing latency.,positive,ai_system
-The deployment is simple and the logs are helpful.,positive,engineering
-"The baseline is modest, but the improvement is meaningful.",positive,mixed_clause
-The agent failed twice and produced wrong answers.,negative,plain_negative
-"The tool is slow, confusing, and unreliable.",negative,plain_negative
-The results are noisy and the setup is painful.,negative,plain_negative
-The detector missed important objects in the image.,negative,ai_system
-The latency is unacceptable for real-time use.,negative,edge_context
-"The output looks polished, but the factual errors are serious.",negative,mixed_clause
-The model is accurate on easy cases but unsafe on hard cases.,negative,mixed_clause
-The prompt sounds confident while giving unsupported claims.,negative,llm_context
-The benchmark score dropped after quantization.,negative,ai_system
-The system crashes when the input is longer than expected.,negative,engineering
-The paper is interesting but the evidence is limited.,neutral,academic
-The dataset contains 1000 samples and 12 features.,neutral,metadata
-The method uses logistic regression as a baseline.,neutral,method_description
-The report describes training and evaluation steps.,neutral,method_description
-The system runs on CPU and stores logs locally.,neutral,engineering
-The experiment compares three prompt templates.,neutral,llm_context
-The model was evaluated on validation and test splits.,neutral,method_description
-"The paper reports accuracy, F1 score, and confusion matrices.",neutral,academic
-The pipeline stores predictions in a CSV file.,neutral,engineering
-"The result is not bad, but it is not clearly good either.",neutral,ambiguous
+"The model is fast, stable, and useful for edge deployment.",positive,positive_clear
+"The model is fast, stable, and useful for medical triage.",positive,positive_clear
+"The model is fast, stable, and useful for scientific retrieval.",positive,positive_clear
+"The agent is fast, stable, and useful for edge deployment.",positive,positive_clear
+"The agent is fast, stable, and useful for medical triage.",positive,positive_clear
+"The agent is fast, stable, and useful for scientific retrieval.",positive,positive_clear
+"The detector is fast, stable, and useful for edge deployment.",positive,positive_clear
+"The detector is fast, stable, and useful for medical triage.",positive,positive_clear
+"The detector is fast, stable, and useful for scientific retrieval.",positive,positive_clear
+"The retriever is fast, stable, and useful for edge deployment.",positive,positive_clear
+"The retriever is fast, stable, and useful for medical triage.",positive,positive_clear
+"The retriever is fast, stable, and useful for scientific retrieval.",positive,positive_clear
+"The pipeline is fast, stable, and useful for edge deployment.",positive,positive_clear
+"The pipeline is fast, stable, and useful for medical triage.",positive,positive_clear
+"The pipeline is fast, stable, and useful for scientific retrieval.",positive,positive_clear
+"The dashboard is fast, stable, and useful for edge deployment.",positive,positive_clear
+"The dashboard is fast, stable, and useful for medical triage.",positive,positive_clear
+"The dashboard is fast, stable, and useful for scientific retrieval.",positive,positive_clear
+The model improved latency without increasing latency.,positive,positive_clear
+The model improved macro F1 without increasing latency.,positive,positive_clear
+The model improved calibration without increasing latency.,positive,positive_clear
+The agent improved retrieval precision without increasing latency.,positive,positive_clear
+The agent improved accuracy without increasing latency.,positive,positive_clear
+The agent improved recall without increasing latency.,positive,positive_clear
+The detector improved latency without increasing latency.,positive,positive_clear
+The detector improved macro F1 without increasing latency.,positive,positive_clear
+The detector improved calibration without increasing latency.,positive,positive_clear
+The retriever improved retrieval precision without increasing latency.,positive,positive_clear
+The retriever improved accuracy without increasing latency.,positive,positive_clear
+The retriever improved recall without increasing latency.,positive,positive_clear
+The pipeline improved latency without increasing latency.,positive,positive_clear
+The pipeline improved macro F1 without increasing latency.,positive,positive_clear
+The pipeline improved calibration without increasing latency.,positive,positive_clear
+The dashboard improved retrieval precision without increasing latency.,positive,positive_clear
+The dashboard improved accuracy without increasing latency.,positive,positive_clear
+The dashboard improved recall without increasing latency.,positive,positive_clear
+The model gave correct answers and clear explanations for edge deployment.,positive,positive_clear
+The model gave correct answers and clear explanations for medical triage.,positive,positive_clear
+The model gave correct answers and clear explanations for scientific retrieval.,positive,positive_clear
+The agent gave correct answers and clear explanations for edge deployment.,positive,positive_clear
+The agent gave correct answers and clear explanations for medical triage.,positive,positive_clear
+The agent gave correct answers and clear explanations for scientific retrieval.,positive,positive_clear
+The detector gave correct answers and clear explanations for edge deployment.,positive,positive_clear
+The detector gave correct answers and clear explanations for medical triage.,positive,positive_clear
+The detector gave correct answers and clear explanations for scientific retrieval.,positive,positive_clear
+The retriever gave correct answers and clear explanations for edge deployment.,positive,positive_clear
+The retriever gave correct answers and clear explanations for medical triage.,positive,positive_clear
+The retriever gave correct answers and clear explanations for scientific retrieval.,positive,positive_clear
+The pipeline gave correct answers and clear explanations for edge deployment.,positive,positive_clear
+The pipeline gave correct answers and clear explanations for medical triage.,positive,positive_clear
+The pipeline gave correct answers and clear explanations for scientific retrieval.,positive,positive_clear
+The dashboard gave correct answers and clear explanations for edge deployment.,positive,positive_clear
+The dashboard gave correct answers and clear explanations for medical triage.,positive,positive_clear
+The dashboard gave correct answers and clear explanations for scientific retrieval.,positive,positive_clear
+The model solved the problem and saved time during edge deployment.,positive,positive_clear
+The model solved the problem and saved time during medical triage.,positive,positive_clear
+The model solved the problem and saved time during scientific retrieval.,positive,positive_clear
+The agent solved the problem and saved time during edge deployment.,positive,positive_clear
+The agent solved the problem and saved time during medical triage.,positive,positive_clear
+The agent solved the problem and saved time during scientific retrieval.,positive,positive_clear
+The detector solved the problem and saved time during edge deployment.,positive,positive_clear
+The detector solved the problem and saved time during medical triage.,positive,positive_clear
+The detector solved the problem and saved time during scientific retrieval.,positive,positive_clear
+The retriever solved the problem and saved time during edge deployment.,positive,positive_clear
+The retriever solved the problem and saved time during medical triage.,positive,positive_clear
+The retriever solved the problem and saved time during scientific retrieval.,positive,positive_clear
+The pipeline solved the problem and saved time during edge deployment.,positive,positive_clear
+The pipeline solved the problem and saved time during medical triage.,positive,positive_clear
+The pipeline solved the problem and saved time during scientific retrieval.,positive,positive_clear
+The dashboard solved the problem and saved time during edge deployment.,positive,positive_clear
+The dashboard solved the problem and saved time during medical triage.,positive,positive_clear
+The dashboard solved the problem and saved time during scientific retrieval.,positive,positive_clear
+"The model is reliable, easy to use, and well documented.",positive,positive_clear
+"The agent is reliable, easy to use, and well documented.",positive,positive_clear
+"The detector is reliable, easy to use, and well documented.",positive,positive_clear
+"The retriever is reliable, easy to use, and well documented.",positive,positive_clear
+"The pipeline is reliable, easy to use, and well documented.",positive,positive_clear
+"The dashboard is reliable, easy to use, and well documented.",positive,positive_clear
+The model failed during edge deployment and produced wrong answers.,negative,negative_clear
+The model failed during medical triage and produced wrong answers.,negative,negative_clear
+The model failed during scientific retrieval and produced wrong answers.,negative,negative_clear
+The agent failed during edge deployment and produced wrong answers.,negative,negative_clear
+The agent failed during medical triage and produced wrong answers.,negative,negative_clear
+The agent failed during scientific retrieval and produced wrong answers.,negative,negative_clear
+The detector failed during edge deployment and produced wrong answers.,negative,negative_clear
+The detector failed during medical triage and produced wrong answers.,negative,negative_clear
+The detector failed during scientific retrieval and produced wrong answers.,negative,negative_clear
+The retriever failed during edge deployment and produced wrong answers.,negative,negative_clear
+The retriever failed during medical triage and produced wrong answers.,negative,negative_clear
+The retriever failed during scientific retrieval and produced wrong answers.,negative,negative_clear
+The pipeline failed during edge deployment and produced wrong answers.,negative,negative_clear
+The pipeline failed during medical triage and produced wrong answers.,negative,negative_clear
+The pipeline failed during scientific retrieval and produced wrong answers.,negative,negative_clear
+The dashboard failed during edge deployment and produced wrong answers.,negative,negative_clear
+The dashboard failed during medical triage and produced wrong answers.,negative,negative_clear
+The dashboard failed during scientific retrieval and produced wrong answers.,negative,negative_clear
+"The model is slow, confusing, and unreliable for edge deployment.",negative,negative_clear
+"The model is slow, confusing, and unreliable for medical triage.",negative,negative_clear
+"The model is slow, confusing, and unreliable for scientific retrieval.",negative,negative_clear
+"The agent is slow, confusing, and unreliable for edge deployment.",negative,negative_clear
+"The agent is slow, confusing, and unreliable for medical triage.",negative,negative_clear
+"The agent is slow, confusing, and unreliable for scientific retrieval.",negative,negative_clear
+"The detector is slow, confusing, and unreliable for edge deployment.",negative,negative_clear
+"The detector is slow, confusing, and unreliable for medical triage.",negative,negative_clear
+"The detector is slow, confusing, and unreliable for scientific retrieval.",negative,negative_clear
+"The retriever is slow, confusing, and unreliable for edge deployment.",negative,negative_clear
+"The retriever is slow, confusing, and unreliable for medical triage.",negative,negative_clear
+"The retriever is slow, confusing, and unreliable for scientific retrieval.",negative,negative_clear
+"The pipeline is slow, confusing, and unreliable for edge deployment.",negative,negative_clear
+"The pipeline is slow, confusing, and unreliable for medical triage.",negative,negative_clear
+"The pipeline is slow, confusing, and unreliable for scientific retrieval.",negative,negative_clear
+"The dashboard is slow, confusing, and unreliable for edge deployment.",negative,negative_clear
+"The dashboard is slow, confusing, and unreliable for medical triage.",negative,negative_clear
+"The dashboard is slow, confusing, and unreliable for scientific retrieval.",negative,negative_clear
+The model missed important cases and reduced latency.,negative,negative_clear
+The model missed important cases and reduced macro F1.,negative,negative_clear
+The model missed important cases and reduced calibration.,negative,negative_clear
+The agent missed important cases and reduced retrieval precision.,negative,negative_clear
+The agent missed important cases and reduced accuracy.,negative,negative_clear
+The agent missed important cases and reduced recall.,negative,negative_clear
+The detector missed important cases and reduced latency.,negative,negative_clear
+The detector missed important cases and reduced macro F1.,negative,negative_clear
+The detector missed important cases and reduced calibration.,negative,negative_clear
+The retriever missed important cases and reduced retrieval precision.,negative,negative_clear
+The retriever missed important cases and reduced accuracy.,negative,negative_clear
+The retriever missed important cases and reduced recall.,negative,negative_clear
+The pipeline missed important cases and reduced latency.,negative,negative_clear
+The pipeline missed important cases and reduced macro F1.,negative,negative_clear
+The pipeline missed important cases and reduced calibration.,negative,negative_clear
+The dashboard missed important cases and reduced retrieval precision.,negative,negative_clear
+The dashboard missed important cases and reduced accuracy.,negative,negative_clear
+The dashboard missed important cases and reduced recall.,negative,negative_clear
+The model looks polished but the factual errors are serious.,negative,negative_clear
+The agent looks polished but the factual errors are serious.,negative,negative_clear
+The detector looks polished but the factual errors are serious.,negative,negative_clear
+The retriever looks polished but the factual errors are serious.,negative,negative_clear
+The pipeline looks polished but the factual errors are serious.,negative,negative_clear
+The dashboard looks polished but the factual errors are serious.,negative,negative_clear
+The model crashed when edge deployment became more complex.,negative,negative_clear
+The model crashed when medical triage became more complex.,negative,negative_clear
+The model crashed when scientific retrieval became more complex.,negative,negative_clear
+The agent crashed when edge deployment became more complex.,negative,negative_clear
+The agent crashed when medical triage became more complex.,negative,negative_clear
+The agent crashed when scientific retrieval became more complex.,negative,negative_clear
+The detector crashed when edge deployment became more complex.,negative,negative_clear
+The detector crashed when medical triage became more complex.,negative,negative_clear
+The detector crashed when scientific retrieval became more complex.,negative,negative_clear
+The retriever crashed when edge deployment became more complex.,negative,negative_clear
+The retriever crashed when medical triage became more complex.,negative,negative_clear
+The retriever crashed when scientific retrieval became more complex.,negative,negative_clear
+The pipeline crashed when edge deployment became more complex.,negative,negative_clear
+The pipeline crashed when medical triage became more complex.,negative,negative_clear
+The pipeline crashed when scientific retrieval became more complex.,negative,negative_clear
+The dashboard crashed when edge deployment became more complex.,negative,negative_clear
+The dashboard crashed when medical triage became more complex.,negative,negative_clear
+The dashboard crashed when scientific retrieval became more complex.,negative,negative_clear
+The model was evaluated on validation and test splits.,neutral,neutral_method
+The agent was evaluated on validation and test splits.,neutral,neutral_method
+The detector was evaluated on validation and test splits.,neutral,neutral_method
+The retriever was evaluated on validation and test splits.,neutral,neutral_method
+The pipeline was evaluated on validation and test splits.,neutral,neutral_method
+The dashboard was evaluated on validation and test splits.,neutral,neutral_method
+The model uses federated averaging as the main method.,neutral,neutral_method
+The model uses TF-IDF retrieval as the main method.,neutral,neutral_method
+The model uses quantization as the main method.,neutral,neutral_method
+The agent uses graph smoothing as the main method.,neutral,neutral_method
+The agent uses early stopping as the main method.,neutral,neutral_method
+The agent uses logistic regression as the main method.,neutral,neutral_method
+The detector uses federated averaging as the main method.,neutral,neutral_method
+The detector uses TF-IDF retrieval as the main method.,neutral,neutral_method
+The detector uses quantization as the main method.,neutral,neutral_method
+The retriever uses graph smoothing as the main method.,neutral,neutral_method
+The retriever uses early stopping as the main method.,neutral,neutral_method
+The retriever uses logistic regression as the main method.,neutral,neutral_method
+The pipeline uses federated averaging as the main method.,neutral,neutral_method
+The pipeline uses TF-IDF retrieval as the main method.,neutral,neutral_method
+The pipeline uses quantization as the main method.,neutral,neutral_method
+The dashboard uses graph smoothing as the main method.,neutral,neutral_method
+The dashboard uses early stopping as the main method.,neutral,neutral_method
+The dashboard uses logistic regression as the main method.,neutral,neutral_method
+"The report describes latency, data preprocessing, and evaluation.",neutral,neutral_method
+"The report describes macro F1, data preprocessing, and evaluation.",neutral,neutral_method
+"The report describes calibration, data preprocessing, and evaluation.",neutral,neutral_method
+"The report describes retrieval precision, data preprocessing, and evaluation.",neutral,neutral_method
+"The report describes accuracy, data preprocessing, and evaluation.",neutral,neutral_method
+"The report describes recall, data preprocessing, and evaluation.",neutral,neutral_method
+The experiment stores predictions and metrics in CSV files.,neutral,neutral_method
+The paper compares federated averaging with a baseline model.,neutral,neutral_method
+The paper compares TF-IDF retrieval with a baseline model.,neutral,neutral_method
+The paper compares quantization with a baseline model.,neutral,neutral_method
+The paper compares graph smoothing with a baseline model.,neutral,neutral_method
+The paper compares early stopping with a baseline model.,neutral,neutral_method
+The paper compares logistic regression with a baseline model.,neutral,neutral_method
+The model is accurate on easy cases but unsafe on hard cases.,negative,mixed_risk
+The agent is accurate on easy cases but unsafe on hard cases.,negative,mixed_risk
+The detector is accurate on easy cases but unsafe on hard cases.,negative,mixed_risk
+The retriever is accurate on easy cases but unsafe on hard cases.,negative,mixed_risk
+The pipeline is accurate on easy cases but unsafe on hard cases.,negative,mixed_risk
+The dashboard is accurate on easy cases but unsafe on hard cases.,negative,mixed_risk
+"The model improves latency, but the evidence is limited.",negative,mixed_risk
+"The model improves macro F1, but the evidence is limited.",negative,mixed_risk
+"The model improves calibration, but the evidence is limited.",negative,mixed_risk
+"The agent improves retrieval precision, but the evidence is limited.",negative,mixed_risk
+"The agent improves accuracy, but the evidence is limited.",negative,mixed_risk
+"The agent improves recall, but the evidence is limited.",negative,mixed_risk
+"The detector improves latency, but the evidence is limited.",negative,mixed_risk
+"The detector improves macro F1, but the evidence is limited.",negative,mixed_risk
+"The detector improves calibration, but the evidence is limited.",negative,mixed_risk
+"The retriever improves retrieval precision, but the evidence is limited.",negative,mixed_risk
+"The retriever improves accuracy, but the evidence is limited.",negative,mixed_risk
+"The retriever improves recall, but the evidence is limited.",negative,mixed_risk
+"The pipeline improves latency, but the evidence is limited.",negative,mixed_risk
+"The pipeline improves macro F1, but the evidence is limited.",negative,mixed_risk
+"The pipeline improves calibration, but the evidence is limited.",negative,mixed_risk
+"The dashboard improves retrieval precision, but the evidence is limited.",negative,mixed_risk
+"The dashboard improves accuracy, but the evidence is limited.",negative,mixed_risk
+"The dashboard improves recall, but the evidence is limited.",negative,mixed_risk
+"The model is fast, but the errors are serious for edge deployment.",negative,mixed_risk
+"The model is fast, but the errors are serious for medical triage.",negative,mixed_risk
+"The model is fast, but the errors are serious for scientific retrieval.",negative,mixed_risk
+"The agent is fast, but the errors are serious for edge deployment.",negative,mixed_risk
+"The agent is fast, but the errors are serious for medical triage.",negative,mixed_risk
+"The agent is fast, but the errors are serious for scientific retrieval.",negative,mixed_risk
+"The detector is fast, but the errors are serious for edge deployment.",negative,mixed_risk
+"The detector is fast, but the errors are serious for medical triage.",negative,mixed_risk
+"The detector is fast, but the errors are serious for scientific retrieval.",negative,mixed_risk
+"The retriever is fast, but the errors are serious for edge deployment.",negative,mixed_risk
+"The retriever is fast, but the errors are serious for medical triage.",negative,mixed_risk
+"The retriever is fast, but the errors are serious for scientific retrieval.",negative,mixed_risk
+"The pipeline is fast, but the errors are serious for edge deployment.",negative,mixed_risk
+"The pipeline is fast, but the errors are serious for medical triage.",negative,mixed_risk
+"The pipeline is fast, but the errors are serious for scientific retrieval.",negative,mixed_risk
+"The dashboard is fast, but the errors are serious for edge deployment.",negative,mixed_risk
+"The dashboard is fast, but the errors are serious for medical triage.",negative,mixed_risk
+"The dashboard is fast, but the errors are serious for scientific retrieval.",negative,mixed_risk
+The model is useful in simple demos but unreliable in deployment.,negative,mixed_risk
+The agent is useful in simple demos but unreliable in deployment.,negative,mixed_risk
+The detector is useful in simple demos but unreliable in deployment.,negative,mixed_risk
+The retriever is useful in simple demos but unreliable in deployment.,negative,mixed_risk
+The pipeline is useful in simple demos but unreliable in deployment.,negative,mixed_risk
+The dashboard is useful in simple demos but unreliable in deployment.,negative,mixed_risk
+"The model gives clear explanations, but some claims are unsupported.",negative,mixed_risk
+"The agent gives clear explanations, but some claims are unsupported.",negative,mixed_risk
+"The detector gives clear explanations, but some claims are unsupported.",negative,mixed_risk
+"The retriever gives clear explanations, but some claims are unsupported.",negative,mixed_risk
+"The pipeline gives clear explanations, but some claims are unsupported.",negative,mixed_risk
+"The dashboard gives clear explanations, but some claims are unsupported.",negative,mixed_risk
