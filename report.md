@@ -2,11 +2,11 @@
 
 ## Motivation
 
-The first version used only 30 examples, which made slice-level results fragile. We expanded the benchmark to make prompt comparison more meaningful.
+A small prompt test can look convincing while hiding failures on mixed or neutral examples. This benchmark uses a larger labeled set so prompt comparison is more meaningful.
 
 ## Dataset
 
-The dataset now has 247 labeled examples across clear positive, clear negative, neutral method/reporting, and mixed-risk slices. Labels are positive, neutral, and negative.
+The dataset has 247 labeled examples across clear positive, clear negative, neutral method/reporting, and mixed-risk slices. Labels are positive, neutral, and negative.
 
 ## Method
 
@@ -22,4 +22,4 @@ The cautious prompt failed because it predicted neutral too often. This shows wh
 
 ## Conclusion
 
-The project is now a stronger prompt-evaluation demo. The next improvement should use a real LLM and a public sentiment dataset.
+The project shows how prompt policies can be compared with repeatable metrics and error analysis. The next improvement should use a real LLM and a public sentiment dataset.

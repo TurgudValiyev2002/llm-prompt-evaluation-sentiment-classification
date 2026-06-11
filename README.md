@@ -66,7 +66,7 @@ The cautious prompt performs poorly because its neutral bias is too strong. It a
 
 ## Conclusion
 
-The project now has a larger evaluation set and clearer error analysis. A stronger next step is to replace the deterministic prompt simulator with real LLM calls on a public sentiment dataset.
+The larger evaluation set and error analysis make the prompt comparison more useful than a few hand-picked examples. A stronger next step is to replace the deterministic prompt simulator with real LLM calls on a public sentiment dataset.
 
 ## How To Run
 
