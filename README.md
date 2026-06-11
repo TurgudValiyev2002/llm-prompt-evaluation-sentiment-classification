@@ -2,7 +2,7 @@
 
 ![Project overview](assets/readme_project_overview.png)
 
-Figure: an expanded prompt-evaluation workflow with generated test examples, prompt policies, slice analysis, and error analysis.
+Figure: an expanded prompt-evaluation workflow with curated test examples, prompt policies, slice analysis, and error analysis.
 
 ## Motivation
 
